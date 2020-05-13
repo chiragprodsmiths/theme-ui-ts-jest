@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"rootDir": "src",
+		"baseUrl": "./",
+		"paths": {
+			"*": ["src/*", "node_modules/*"]
+		},
+		"outDir": "public",
+		"sourceMap": true,
+		"moduleResolution": "node",
+		"jsx": "react",
+		"strict": true,
+		"allowJs": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"importHelpers": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
+	},
+	"include": ["src", "types"],
+	"exclude": ["node_modules", "public"],
+	"compileOnSave": false
+}
