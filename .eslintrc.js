@@ -1,4 +1,5 @@
 module.exports = {
+	root: true,
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 2020,
@@ -6,6 +7,7 @@ module.exports = {
 		ecmaFeatures: {
 			jsx: true,
 		},
+		parserOptions: ['./tsconfig.json'],
 	},
 	settings: {
 		react: {
@@ -14,11 +16,13 @@ module.exports = {
 		},
 	},
 	extends: [
+		'airbnb-typescript',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended',
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
-		'plugin:@typescript-eslint/recommended',
+		'prettier',
 		'prettier/@typescript-eslint',
-		'plugin:prettier/recommended',
 	],
 	plugins: ['react', 'react-hooks', '@typescript-eslint'],
 	rules: {},
