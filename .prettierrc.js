@@ -1,10 +1,9 @@
 module.exports = {
-	proseWrap: 'preserve',
-	semi: true,
-	trailingComma: 'all',
-	singleQuote: true,
-	printWidth: 120,
-	useTabs: true,
-	tabWidth: 2,
-	jsxBracketSameLine: true,
+  proseWrap: 'preserve',
+  semi: true,
+  trailingComma: 'all',
+  singleQuote: true,
+  printWidth: 120,
+  tabWidth: 2,
+  jsxBracketSameLine: true,
 };
