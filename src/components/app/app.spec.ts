@@ -2,6 +2,6 @@ import { sayHello } from './app';
 
 describe('This is a simple test', () => {
   test('Check the sayHello function', () => {
-    expect(sayHello('Chirag')).toEqual('Welcome to Arthify Sanjay');
+    expect(sayHello('Chirag')).toEqual('Welcome to Arthify Chirag');
   });
 });
