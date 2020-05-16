@@ -5,7 +5,6 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/public/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
   collectCoverage: true,
-  mapCoverage: true,
   globals: {
     'ts-jest': {
       tsConfig: './tsconfig.test.json',

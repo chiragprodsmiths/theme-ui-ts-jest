@@ -4,8 +4,10 @@ import { theme } from '../../theme';
 
 export type Props = {};
 
+export const sayHello = (name: string): string => `Welcome to Arthify ${name}`;
+
 export const App: React.FC<Props> = () => (
   <ThemeProvider theme={theme}>
-    <div>Hello world is not</div>
+    <div>{sayHello('Chirag')}</div>
   </ThemeProvider>
 );
