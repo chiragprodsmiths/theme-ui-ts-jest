@@ -7,7 +7,7 @@ export const Alerts: React.FC<AlertsProps> = () => {
   return (
     <ul>
       {alerts.data.map((alert) => (
-        <li key={String(alert.id)} data-test-id={alert.id}>
+        <li key={String(alert.id)} data-testid={alert.id}>
           {alert.name}
         </li>
       ))}
