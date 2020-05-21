@@ -21,10 +21,13 @@
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet"
   },
   "dependencies": {
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "0.3.1",
-    "typestyle": "^2.1.0"
+    "typestyle": "^2.1.0",
+    "urql": "^1.9.7"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.18",
