@@ -1,24 +1,29 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackDevServer from 'webpack-dev-server';
+import { config } from './src/configs';
 
-const config: webpack.Configuration | webpackDevServer.Configuration = {
+const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
   mode: 'development',
   devtool: 'source-map',
   entry: './src/index.tsx',
+  node: {
+    fs: 'empty',
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.mjs', '.js', '.jsx'],
+    modules: ['src', 'node_modules'],
   },
   module: {
     rules: [
       { test: /\.ts(x?)$/, loader: 'ts-loader', exclude: /node_modules/ },
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.js(x?)$/,
         loader: 'source-map-loader',
       },
     ],
@@ -31,6 +36,7 @@ const config: webpack.Configuration | webpackDevServer.Configuration = {
     index: 'index.html',
     contentBase: './public',
   },
+  plugins: [new webpack.EnvironmentPlugin(config)],
 };
 
-export default config;
+export default webPackConfig;
