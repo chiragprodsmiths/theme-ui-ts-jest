@@ -1,13 +1,14 @@
 import React from 'react';
 import { ThemeProvider } from 'theme-ui';
-import { theme } from '../../theme';
+import Todos from 'components/examples/Todos';
+import { theme } from 'theme';
+import { sayHello } from './app.service';
 
 export type Props = {};
-
-export const sayHello = (name: string): string => `Welcome to Arthify ${name}`;
 
 export const App: React.FC<Props> = () => (
   <ThemeProvider theme={theme}>
     <div>{sayHello('Chirag')}</div>
+    <Todos />
   </ThemeProvider>
 );
