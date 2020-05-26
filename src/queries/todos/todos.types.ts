@@ -4,4 +4,6 @@ export type TodoEntity = {
   complete: Boolean;
 };
 
-export type TodoCollection = TodoEntity[] | undefined;
+export type TodosQueryResult = {
+  todos: TodoEntity[];
+};
