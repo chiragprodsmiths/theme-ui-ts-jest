@@ -1,9 +1,9 @@
 {
-  "name": "react-template",
+  "name": "fleet-management-web-app",
   "version": "1.0.0",
-  "description": "react app template",
+  "description": "fleet-management-web-app",
   "main": "index.ts",
-  "author": "@chirag",
+  "author": "@arthify",
   "license": "MIT",
   "private": true,
   "scripts": {
