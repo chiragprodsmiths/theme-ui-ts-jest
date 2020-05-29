@@ -1,3 +1,3 @@
 # ts-react-app
 
-typescript react app 
+## typescript react app

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Todos from 'components/examples/Todos';
 import { Box } from 'theme-ui';
+import Login from 'components/login';
 
 type PropTypes = {};
 
@@ -10,8 +10,8 @@ type PropTypes = {};
 const Home: React.FC<PropTypes> = () => {
   return (
     <Box>
-      <h1>Home Page</h1>
-      <Todos />
+      <h1>Login Page</h1>
+      <Login />
     </Box>
   );
 };

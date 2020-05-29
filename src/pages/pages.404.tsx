@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-export type NotFoundProps = {};
+type PropTypes = {};
 
 /**
  * NotFound Page
  */
-export const NotFound: React.FC<NotFoundProps> = () => {
-  return <div>NotFound Page</div>;
+const NotFound: React.FC<PropTypes> = () => {
+  return <h1>Not Found Page</h1>;
 };
 
 export default NotFound;

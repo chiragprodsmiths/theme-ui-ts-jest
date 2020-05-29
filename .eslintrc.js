@@ -37,6 +37,9 @@ module.exports = {
     'prettier/prettier': ['error'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
+    'react/destructuring-assignment': 'off',
+    'no-console': 'off',
     indent: ['error', 2],
   },
 };

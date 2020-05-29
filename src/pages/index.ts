@@ -1,5 +1,7 @@
-import * as Home from './pages.home';
-import * as Dashboard from './pages.dashboard';
-import * as NotFound from './pages.404';
+import NotFound from './pages.404';
+import Home from './pages.home';
+import Brands from './brands';
+import Users from './users';
+import Login from './pages.login';
 
-export { Home, Dashboard, NotFound };
+export default { NotFound, Login, Home, Brands, Users };
