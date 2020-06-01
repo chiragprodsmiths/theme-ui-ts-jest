@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { MemoryRouter as Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-// import { ThemeProvider } from 'theme-ui';
-// import { theme } from '../theme/index';
-import ProtectedRouter from './router.protected';
+// import * as React from 'react';
+// import { MemoryRouter as Router } from 'react-router-dom';
+// import { createMemoryHistory } from 'history';
+// import { render } from '@testing-library/react';
+// import '@testing-library/jest-dom/extend-expect';
+// // import { ThemeProvider } from 'theme-ui';
+// // import { theme } from '../theme/index';
+// import ProtectedRouter from './router.protected';
 
 /**
  * Test Strokes
