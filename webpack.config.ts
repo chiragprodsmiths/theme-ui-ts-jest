@@ -13,6 +13,7 @@ const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.mjs', '.js', '.jsx'],

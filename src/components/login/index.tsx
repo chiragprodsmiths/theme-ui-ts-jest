@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { Box } from 'theme-ui';
+
 import { useMutation } from 'urql';
 import { loginQuery } from 'queries/queries.login';
 import { FormData } from './types';
@@ -32,19 +32,19 @@ export const Login: React.FC<PropTypes> = () => {
   };
 
   return (
-    <Box>
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Box>
+        <div>
           <input name="userName" defaultValue="" ref={register({ required: true })} />
           {errors.userName && <span>This field is required</span>}
-        </Box>
-        <Box>
+        </div>
+        <div>
           <input name="password" ref={register({ required: true })} />
           {errors.password && <span>This field is required</span>}
-        </Box>
+        </div>
         <input type="submit" />
       </form>
-    </Box>
+    </div>
   );
 };
 

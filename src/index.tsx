@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'urql';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from 'components/app/app';
 import { apiClient } from './api/apiClient';
 
@@ -11,9 +11,9 @@ import { apiClient } from './api/apiClient';
 ReactDOM.render(
   <React.StrictMode>
     <Provider value={apiClient}>
-      <BrowserRouter>
+      <Router>
         <App />
-      </BrowserRouter>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

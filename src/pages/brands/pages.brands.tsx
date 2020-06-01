@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Box, Flex } from 'theme-ui';
-import { Link, Outlet } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 
 type PropTypes = {};
 
@@ -9,13 +9,24 @@ type PropTypes = {};
  */
 const Brands: React.FC<PropTypes> = () => {
   return (
-    <Box>
-      <h1>Brands Page</h1>
-      <Flex sx={{ justifyContent: 'space-evenly' }}>
-        <Link to="add-brand">Add Brand</Link>
-      </Flex>
-      <Outlet />
-    </Box>
+    <div>
+      <h1>Brands Listing Page</h1>
+      <ul>
+        <li>
+          <Link to="add-new-brand">Add New Brand</Link>
+        </li>
+      </ul>
+      <h2>Click below to edit brands</h2>
+      <ul>
+        {[...Array(10).keys()].map((key: number) => (
+          <li key={String(key)}>
+            <Link to={`arthify_${key}`} state={{ name: `arthify-name_${key}` }}>
+              {key}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

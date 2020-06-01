@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box } from 'theme-ui';
+
 import Login from 'components/login';
 
 type PropTypes = {};
@@ -9,10 +9,10 @@ type PropTypes = {};
  */
 const Home: React.FC<PropTypes> = () => {
   return (
-    <Box>
+    <div>
       <h1>Login Page</h1>
       <Login />
-    </Box>
+    </div>
   );
 };
 

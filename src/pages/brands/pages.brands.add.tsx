@@ -6,7 +6,7 @@ type PropTypes = {};
  * Add New Brand Page
  */
 const AddBrand: React.FC<PropTypes> = () => {
-  return <div>Add New Brand Page</div>;
+  return <h1>Add New Brand Page</h1>;
 };
 
 export default AddBrand;

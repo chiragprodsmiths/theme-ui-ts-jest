@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
   extends: [
     'airbnb-typescript',
+    'prettier/react',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'prettier/@typescript-eslint',
@@ -40,6 +41,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
     'no-console': 'off',
+    'react/jsx-closing-bracket-location': 'off',
     indent: ['error', 2],
   },
 };

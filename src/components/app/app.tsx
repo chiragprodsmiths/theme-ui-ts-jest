@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from 'theme';
-import AllRoutes from 'routes';
-import Layouts from 'components/layouts';
+import ProtectedRouter from 'router/router.protected';
+// import PublicRouter from 'router/router.public';
 
-export type Props = {};
+type Props = {};
 
 export const App: React.FC<Props> = () => {
-  const [authenticated, setAuthenticated] = useState<Boolean>(false);
-  console.log(setAuthenticated);
   return (
     <ThemeProvider theme={theme}>
-      {authenticated && (
-        <Layouts.AppLayout>
-          <AllRoutes.ProtectedRoutes />
-        </Layouts.AppLayout>
-      )}
-      {!authenticated && (
-        <Layouts.PublicLayout>
-          <AllRoutes.PublicRoutes />
-        </Layouts.PublicLayout>
-      )}
+      <ProtectedRouter />
     </ThemeProvider>
   );
 };
