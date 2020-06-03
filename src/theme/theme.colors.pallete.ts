@@ -1,23 +1,18 @@
-export type TypeOfColorsPallete = {
-  [key: string]: string;
+// should be unique
+const colorNames = ['red', 'blue'] as const;
+
+// should be unqie
+const colorValues = ['#171760', '#ff0000'] as const;
+
+type ColorName = typeof colorNames[number];
+
+export type ColorValue = typeof colorValues[number];
+
+type PalleteColors = {
+  [key in ColorName]: ColorValue;
 };
 
-export const ColorsPallete: TypeOfColorsPallete = {
-  background: '#F1F4F6',
-  text: '#1F232C',
-  textLight: '#656E7F',
-  border: '#CFDBE9',
-  logo: '#33366F',
-  logoText: '#090D19',
-  primary: '#7B0537',
-  subHeader: '#F5F8F9',
-  muted: '#9FACBF',
-  link: '#3B6EE6',
-  label: '#D75B77',
-  greyShadow: '#E6EDF5',
-  pinkShadow: '#7B05373D',
-  activeShadow: '#7B053752',
-  transparent: 'transparent',
-  black: '#00000',
-  white: '#ffffff',
+export const ColorPallete: PalleteColors = {
+  blue: '#171760',
+  red: '#ff0000',
 };

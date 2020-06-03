@@ -1,13 +1,21 @@
-import { ColorsPallete } from './theme.colors.pallete';
+import { ColorPallete, ColorValue } from './theme.colors.pallete';
 
-const Colors: Record<string, string> = {
-  background: ColorsPallete.background,
-  // background: ColorsPallete
-  // modes: IColorMode {
-  //   dark: {
-  //     primary: '#3B6EE6',
-  //   },
-  // },
+const colorVariants = ['text', 'background', 'primary', 'secondary', 'accent', 'highlight', 'muted'] as const;
+
+type ColorVariant = typeof colorVariants[number];
+
+type ColorVariants = {
+  [key in ColorVariant]: ColorValue;
+};
+
+const Colors: ColorVariants = {
+  text: ColorPallete.blue,
+  background: ColorPallete.red,
+  primary: ColorPallete.blue,
+  secondary: ColorPallete.red,
+  accent: ColorPallete.red,
+  highlight: ColorPallete.red,
+  muted: ColorPallete.red,
 };
 
 export default Colors;
