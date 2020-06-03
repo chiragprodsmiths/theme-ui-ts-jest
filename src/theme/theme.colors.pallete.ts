@@ -1,18 +1,18 @@
-// should be unique
-const colorNames = ['red', 'blue'] as const;
+// should be unique, should be string
+const colorNames = ['cream', 'marun'] as const;
 
-// should be unqie
-const colorValues = ['#171760', '#ff0000'] as const;
+// should be unqie, should be string
+const colorValues = ['#F1F4F6', '#7B0537'] as const;
 
 type ColorName = typeof colorNames[number];
 
 export type ColorValue = typeof colorValues[number];
 
 type PalleteColors = {
-  [key in ColorName]: ColorValue;
+  [key in ColorName]: ColorValue | ColorValue[];
 };
 
 export const ColorPallete: PalleteColors = {
-  blue: '#171760',
-  red: '#ff0000',
+  cream: '#F1F4F6',
+  marun: ['#F1F4F6', '#7B0537'],
 };

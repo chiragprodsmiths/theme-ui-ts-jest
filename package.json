@@ -30,7 +30,8 @@
     "react-router-dom": "^6.0.0-alpha.5",
     "theme-ui": "0.3.1",
     "typestyle": "^2.1.0",
-    "urql": "^1.9.7"
+    "urql": "^1.9.7",
+    "utility-types": "^3.10.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.18",
