@@ -37,10 +37,8 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
           </li>
         </ul>
       </div>
-      <div>
-        <BreadCrumbs />
-      </div>
-      <div>{props.children}</div>
+      <BreadCrumbs />
+      {props.children}
       <Button
         variant={EnumButtonVariatns.PRIMARY}
         onClick={() => {

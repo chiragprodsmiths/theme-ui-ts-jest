@@ -1,7 +1,15 @@
 import * as React from 'react';
-import { IconButton, Container, Flex, Image, Box, Text } from 'theme-ui';
+import {
+  IconButton,
+  Container,
+  Flex,
+  // Image,
+  Box,
+  Text,
+} from 'theme-ui';
+import UserIcon from 'components/icons/icon.user';
 
-const logo = require('../../images/logo.png');
+// const logo = require('../../images/logo.png');
 
 type PropTypes = {};
 
@@ -19,9 +27,9 @@ const Header: React.FC<PropTypes> = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Box sx={{}}>
+          <Box>
             <Flex sx={{ alignItems: 'center' }}>
-              <Image src={logo} variant="logo" />
+              {/* <Image src={logo} variant="logo" /> */}
               <Text
                 sx={{
                   fontWeight: 'semiBold',
@@ -34,7 +42,7 @@ const Header: React.FC<PropTypes> = () => {
           <Box>
             <IconButton>
               Sales Manager
-              {/* <UserIcon ml={2} /> */}
+              <UserIcon sx={{ ml: 2 }} />
             </IconButton>
           </Box>
         </Flex>
