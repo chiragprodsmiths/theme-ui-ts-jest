@@ -14,33 +14,12 @@ type PropTypes = {};
 const SubHeader: React.FC<PropTypes> = () => {
   return (
     <Container px={8} bg="subHeader" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
-      <Flex
-        sx={{
-          minHeight: 56,
-          alignItems: 'center',
-        }}>
-        <Box
-          sx={{
-            width: '70%',
-          }}>
-          <Text
-            sx={{
-              color: 'textLight',
-            }}>
-            Dashboard
-          </Text>
+      <Flex sx={{ alignItems: 'center', py: 4 }}>
+        <Box sx={{ width: '70%' }}>
+          <Text sx={{ color: 'textLight' }}>Dashboard</Text>
         </Box>
-        <Box
-          sx={{
-            marginRight: 'auto',
-            textAlign: 'right',
-            width: '30%',
-          }}>
-          <Flex
-            sx={{
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}>
+        <Box sx={{ width: '30%', textAlign: 'right' }}>
+          <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
             <Box>
               <IconButton>
                 <BrandIcon sx={{ mr: 2 }} />

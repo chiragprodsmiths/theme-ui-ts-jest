@@ -1,11 +1,11 @@
 export enum EnumCardsVariants {
-  'DASHBOARD' = 'dashboard',
+  'DASHBOARD_TAB' = 'dashboardTab',
 }
 
 export type ICardsVariants = Record<EnumCardsVariants, any>;
 
 const CardsVariants: ICardsVariants = {
-  dashboard: {
+  dashboardTab: {
     borderRadius: 'default',
     boxShadow: 'card',
     cursor: 'pointer',

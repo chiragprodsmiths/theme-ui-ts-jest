@@ -7,7 +7,7 @@ export const black: TypeColorValue[] = asUniqueArray([colorValues[5], colorValue
 
 export const white: TypeColorValue[] = asUniqueArray([colorValues[9], colorValues[26]]);
 
-export const red: TypeColorValue[] = asUniqueArray([colorValues[4], colorValues[10], colorValues[11]]);
+export const red: TypeColorValue[] = asUniqueArray([colorValues[3], colorValues[10], colorValues[11]]);
 
 export const green: TypeColorValue[] = asUniqueArray([colorValues[12], colorValues[13], colorValues[14]]);
 

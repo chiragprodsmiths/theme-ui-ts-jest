@@ -38,7 +38,7 @@ const Colors: Variants = {
   logoText: ColorPalette.black[0],
   subHeader: ColorPalette.grey[4],
   link: ColorPalette.blue[0],
-  label: ColorPalette.maroon[4],
+  label: ColorPalette.maroon[3],
   greyShadow: ColorPalette.grey[3],
   pinkShadow: ColorPalette.maroon[1],
   activeShadow: ColorPalette.maroon[2],

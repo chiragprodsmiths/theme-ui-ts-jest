@@ -2,6 +2,7 @@ export enum EnumLinksVariants {
   'BREADCRUMB' = 'breadcrumb',
   'SIDEBAR' = 'sidebar',
   'SIDEBAR_ACTIVE' = 'sidebarActive',
+  'ICON_LIINK' = 'iconLink',
 }
 
 export type ILinksVariants = Record<EnumLinksVariants, any>;
@@ -26,6 +27,12 @@ const LinksVariants: ILinksVariants = {
     color: 'white',
     boxShadow: 'buttonShadow',
     borderRadius: 'sm',
+  },
+  iconLink: {
+    display: 'flex',
+    alignItems: 'center',
+    color: 'link',
+    fontSize: 14,
   },
 };
 

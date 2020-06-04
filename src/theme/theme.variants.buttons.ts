@@ -1,4 +1,4 @@
-export enum EnumButtonVariatns {
+export enum EnumButtonVariants {
   'PRIMARY' = 'primary',
   'OUTLINE' = 'outline',
   'ICON' = 'icon',
@@ -8,7 +8,7 @@ export enum EnumButtonVariatns {
   'TAB_ACTIVE' = 'tabActive',
 }
 
-export type IButtonVariants = Record<EnumButtonVariatns, any>;
+export type IButtonVariants = Record<EnumButtonVariants, any>;
 
 /**
  * TODO:
@@ -49,14 +49,15 @@ const ButtonVariants: IButtonVariants = {
   tab: {
     bg: 'transparent',
     color: 'textLight',
-    width: 22,
     borderRadius: 'none',
+    borderBottom: '2px solid',
+    borderColor: 'transparent',
+    mb: '-2px',
     '&:hover': {
       color: 'text',
     },
     '&:active': {
       color: 'text',
-      boxShadow: 'tabActive',
       borderBottom: '2px solid',
       borderColor: 'primary',
       fontWeight: 'medium',
@@ -65,22 +66,11 @@ const ButtonVariants: IButtonVariants = {
   tabActive: {
     bg: 'transparent',
     color: 'text',
-    width: '88px',
     fontWeight: 'medium',
     borderRadius: 'none',
-    position: 'relative',
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      width: '100%',
-      left: 0,
-      right: 0,
-      height: '2px',
-      boxShadow: 'tabActive',
-      bottom: '-2px',
-      bg: 'primary',
-      borderRadius: 'sm',
-    },
+    borderBottom: '2px solid',
+    borderColor: 'primary',
+    mb: '-2px',
   },
 };
 
