@@ -35,6 +35,21 @@ const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
           mimetype: 'image/svg+xml',
         },
       },
+      {
+        test: /\.(png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+        },
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'application/octet-stream',
+        },
+      },
     ],
   },
   devServer: {
