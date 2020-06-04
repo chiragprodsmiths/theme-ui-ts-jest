@@ -1,8 +1,8 @@
-/** @jsx jsx */
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { useColorMode, jsx, Button } from 'theme-ui';
+import { useColorMode, Button } from 'theme-ui';
 import BreadCrumbs from 'components/breadcrumbs/breadcrumbs';
+import Header from 'components/header';
 import { EnumButtonVariatns } from 'theme/theme.variants.buttons';
 
 type PropTypes = {
@@ -16,9 +16,9 @@ type PropTypes = {
 const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <div>
+    <>
       <div>
-        App Page Header
+        <Header />
         <ul>
           <li>
             <Link sx={{ color: 'primary' }} to="/">
@@ -49,7 +49,7 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
         Change Mode
       </Button>
       <div>App Page Footer</div>
-    </div>
+    </>
   );
 };
 
