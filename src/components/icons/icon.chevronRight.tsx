@@ -15,7 +15,7 @@ const ChevronRight: React.FC<PropTypes> = (props) => {
   const { color, width, height, sx, ...rest } = props;
   return (
     <svg
-      viewBox="0 0 16 16"
+      viewBox="0 0 6.84 12"
       sx={{
         fill: color,
         width,
@@ -30,8 +30,8 @@ const ChevronRight: React.FC<PropTypes> = (props) => {
 
 ChevronRight.defaultProps = {
   color: 'link',
-  width: 16,
-  height: 16,
+  width: 6.84,
+  height: 12,
   sx: {},
 };
 

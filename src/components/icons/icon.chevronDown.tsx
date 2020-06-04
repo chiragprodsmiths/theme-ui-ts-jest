@@ -29,7 +29,7 @@ const ChevronDown: React.FC<PropTypes> = (props) => {
 };
 
 ChevronDown.defaultProps = {
-  color: 'link',
+  color: 'primaryIcon',
   width: 12,
   height: 6.84,
   sx: {},

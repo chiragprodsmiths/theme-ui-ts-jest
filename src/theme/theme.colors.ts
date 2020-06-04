@@ -22,6 +22,7 @@ type Variants = {
   transparent: TypeColorValue;
   black: TypeColorValue;
   white: TypeColorValue;
+  primaryIcon: TypeColorValue;
 };
 
 const Colors: Variants = {
@@ -45,6 +46,7 @@ const Colors: Variants = {
   transparent: ColorPalette.white[1],
   black: ColorPalette.black[3],
   white: ColorPalette.white[0],
+  primaryIcon: ColorPalette.grey[1],
 };
 
 export default Colors;

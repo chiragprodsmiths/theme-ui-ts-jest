@@ -33,6 +33,7 @@ const LinksVariants: ILinksVariants = {
     alignItems: 'center',
     color: 'link',
     fontSize: 14,
+    lineHeight: 1,
   },
 };
 
