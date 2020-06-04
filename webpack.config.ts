@@ -27,6 +27,14 @@ const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
         test: /\.js(x?)$/,
         loader: 'source-map-loader',
       },
+      {
+        test: /\.(svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'image/svg+xml',
+        },
+      },
     ],
   },
   devServer: {

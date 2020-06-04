@@ -4,9 +4,9 @@ export enum EnumLinksVariants {
   'SIDEBAR_ACTIVE' = 'sidebarActive',
 }
 
-export type ILinksVariants = Record<EnumLinksVariants, any>;
+export type ILinkVariants = Record<EnumLinksVariants, any>;
 
-const LinksVariants: ILinksVariants = {
+const LinkVariants: ILinkVariants = {
   breadcrumb: {
     fontSize: 1,
     mr: 2,
@@ -29,4 +29,4 @@ const LinksVariants: ILinksVariants = {
   },
 };
 
-export default LinksVariants;
+export default LinkVariants;
