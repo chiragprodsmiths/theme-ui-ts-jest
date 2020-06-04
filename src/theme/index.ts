@@ -7,7 +7,7 @@ import Space from './theme.spaces';
 import ButtonVariants from './theme.variants.buttons';
 import BadgesVariants from './theme.variants.badges';
 import InputVariants from './theme.variants.input';
-import LinksVariants from './theme.variants.links';
+import LinkVariants from './theme.variants.links';
 import ImagesVariants from './theme.variants.images';
 import CardsVariants from './theme.variants.cards';
 import TextVariants from './theme.variants.text';
@@ -26,7 +26,7 @@ export const theme = {
   buttons: ButtonVariants,
   badges: BadgesVariants,
   input: InputVariants,
-  links: LinksVariants,
+  links: LinkVariants,
   cards: CardsVariants,
   images: ImagesVariants,
   text: TextVariants,

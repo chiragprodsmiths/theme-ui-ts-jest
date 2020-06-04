@@ -1,15 +1,7 @@
 import * as React from 'react';
-import {
-  IconButton,
-  Container,
-  Flex,
-  // Image,
-  Box,
-  Text,
-} from 'theme-ui';
+import { IconButton, Container, Flex, Image, Box, Text } from 'theme-ui';
 import UserIcon from 'components/icons/icon.user';
-
-// const logo = require('../../images/logo.png');
+import logo from 'images/logo.png';
 
 type PropTypes = {};
 
@@ -29,7 +21,7 @@ const Header: React.FC<PropTypes> = () => {
           }}>
           <Box>
             <Flex sx={{ alignItems: 'center' }}>
-              {/* <Image src={logo} variant="logo" /> */}
+              <Image src={logo} variant="logo" />
               <Text
                 sx={{
                   fontWeight: 'semiBold',

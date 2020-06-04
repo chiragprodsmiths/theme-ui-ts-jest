@@ -1,6 +1,10 @@
 import { ColorPalette } from './theme.colors.palette';
 import { TypeColorValue } from './theme.colors.values';
 
+/**
+ * TODO: declare color mode type
+ * add color sample color mode to test
+ */
 type Variants = {
   text: TypeColorValue;
   background: TypeColorValue;
@@ -33,6 +37,9 @@ const Colors: Variants = {
   accent: ColorPalette.red[2],
   highlight: ColorPalette.blue[0],
   muted: ColorPalette.grey[1],
+  transparent: ColorPalette.white[1],
+  black: ColorPalette.black[3],
+  white: ColorPalette.white[0],
   textLight: ColorPalette.grey[0],
   border: ColorPalette.grey[2],
   logo: ColorPalette.blue[1],
@@ -43,9 +50,6 @@ const Colors: Variants = {
   greyShadow: ColorPalette.grey[3],
   pinkShadow: ColorPalette.maroon[1],
   activeShadow: ColorPalette.maroon[2],
-  transparent: ColorPalette.white[1],
-  black: ColorPalette.black[3],
-  white: ColorPalette.white[0],
   primaryIcon: ColorPalette.grey[1],
 };
 
