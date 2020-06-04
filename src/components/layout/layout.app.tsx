@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useColorMode, Button } from 'theme-ui';
 import BreadCrumbs from 'components/breadcrumbs/breadcrumbs';
 import Header from 'components/header';
+import SubHeader from 'components/subHeader';
 import { EnumButtonVariatns } from 'theme/theme.variants.buttons';
 
 type PropTypes = {
@@ -19,7 +20,8 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
     <>
       <div>
         <Header />
-        <ul>
+        <SubHeader />
+        {/* <ul>
           <li>
             <Link sx={{ color: 'primary' }} to="/">
               Home
@@ -35,7 +37,7 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
               Users
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <BreadCrumbs />
       {props.children}

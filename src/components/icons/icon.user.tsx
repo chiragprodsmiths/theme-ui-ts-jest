@@ -11,10 +11,6 @@ type PropTypes = {
   sx?: object;
 };
 
-/**
- * Public layout
- * used for public pages
- */
 const UserIcon: React.FC<PropTypes> = (props) => {
   const { color, width, height, sx, ...rest } = props;
   return (

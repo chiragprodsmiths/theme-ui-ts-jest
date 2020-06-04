@@ -23,7 +23,7 @@ const Header: React.FC<PropTypes> = () => {
       <Container px={8} bg="white" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
         <Flex
           sx={{
-            minHeight: 72,
+            minHeight: 68,
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
