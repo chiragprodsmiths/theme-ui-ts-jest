@@ -9,7 +9,6 @@ const TextVariants: ITextVariants = {
   heading: {
     fontFamily: 'heading',
     lineHeight: 'heading',
-    fontWeight: 'heading',
   },
   whiteXSmall: {
     fontSize: 10,

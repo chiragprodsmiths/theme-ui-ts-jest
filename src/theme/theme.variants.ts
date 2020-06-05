@@ -21,7 +21,7 @@ const Variants: IVariants = {
   },
   dashboardListItem: {
     pt: 4,
-    pb: 3,
+    pb: 4,
     borderBottom: '1px solid',
     borderColor: 'border',
   },

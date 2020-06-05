@@ -35,7 +35,7 @@ type Variants = {
 const Colors: Variants = {
   background: ColorPalette.grey[5],
   primary: ColorPalette.maroon[0],
-  text: ColorPalette.black[0],
+  text: ColorPalette.black[1],
   secondary: ColorPalette.black[2],
   accent: ColorPalette.red[2],
   highlight: ColorPalette.blue[0],

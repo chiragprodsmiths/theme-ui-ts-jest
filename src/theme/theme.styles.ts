@@ -4,6 +4,8 @@ const Styles = {
   root: {
     ...fontFaces,
     fontFamily: 'body',
+    fontWeight: 'regular',
+    fontSize: 2,
     lineHeight: 'body',
     WebkitFontSmoothing: 'antialiased',
     p: {
@@ -16,22 +18,22 @@ const Styles = {
       fontFamily: 'regular',
     },
     h1: {
-      fontFamily: 'regular',
+      fontSize: 5,
     },
     h2: {
-      fontFamily: 'regular',
+      fontSize: 4,
     },
     h3: {
-      fontFamily: 'regular',
+      fontSize: 3,
     },
     h4: {
-      fontFamily: 'regular',
+      fontSize: 2,
     },
     h5: {
-      fontFamily: 'regular',
+      fontSize: 1,
     },
     h6: {
-      fontFamily: 'regular',
+      fontSize: 0,
     },
     button: {
       fontFamily: 'regular',

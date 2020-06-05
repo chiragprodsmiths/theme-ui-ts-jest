@@ -84,7 +84,7 @@ const ButtonVariants: IButtonVariants = {
   tabActive: {
     bg: 'transparent',
     color: 'text',
-    fontWeight: 'medium',
+    fontFamily: 'medium',
     borderRadius: 'none',
     position: 'relative',
     minWidth: 88,

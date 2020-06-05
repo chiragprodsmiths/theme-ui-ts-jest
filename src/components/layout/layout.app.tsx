@@ -2,7 +2,7 @@ import * as React from 'react';
 /**
  * Theme UI Components
  */
-import { IconButton, Container, Flex, Image, Box, Text, Link } from 'theme-ui';
+import { IconButton, Container, Flex, Image, Box, Text, Heading, Link } from 'theme-ui';
 /**
  * Custom Components
  */
@@ -61,7 +61,9 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
       <Container px={8} bg="subHeader" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
         <Flex sx={{ alignItems: 'center', py: 4 }}>
           <Box sx={{ width: '70%' }}>
-            <Text sx={{ color: 'textLight' }}>Dashboard</Text>
+            <Heading as="h4" sx={{ color: 'textLight' }}>
+              Dashboards
+            </Heading>
           </Box>
           <Box sx={{ width: '30%', textAlign: 'right' }}>
             <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>

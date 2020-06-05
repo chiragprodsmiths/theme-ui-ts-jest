@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, Card } from 'theme-ui';
+import { Text, Card, Heading } from 'theme-ui';
 import DashboardBadge from './dashboard.badge';
 
 type PropTypes = {
@@ -17,15 +17,8 @@ const DashboardCard: React.FC<PropTypes> = (props) => {
   return (
     <Card variant="dashboardTab" sx={{ opacity: props.active ? 1 : 0.5 }}>
       <DashboardBadge value={props.badgeValue} />
-      <Text>{props.title}</Text>
-      <Text
-        sx={{
-          fontSize: 6,
-          lineHeight: 'normal',
-          fontWeight: 'thin',
-        }}>
-        {props.value}
-      </Text>
+      <Heading as="h4">{props.title}</Heading>
+      <Text sx={{ fontSize: 7, fontFamily: 'light' }}>{props.value}</Text>
       <Text color="textLight">{props.status}</Text>
     </Card>
   );
