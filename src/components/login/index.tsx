@@ -72,7 +72,7 @@ export const Login: React.FC<PropTypes> = () => {
             </Box>
             <Text sx={{ mb: 10, fontSize: 5, fontWeight: 'medium' }}>Sign in</Text>
             <Box variant="inputWrap">
-              <Input id="email" value="" ref={register({ required: true })} />
+              <Input id="email" placeholder="Email" ref={register({ required: true })} />
               <Label htmlFor="email">Email</Label>
             </Box>
             {/* {errors.userName && <span>This field is required</span>} */}
@@ -82,7 +82,7 @@ export const Login: React.FC<PropTypes> = () => {
               </Link>
             </Flex>
             <Box variant="inputWrap">
-              <Input id="password" defaultValue="" ref={register({ required: true })} />
+              <Input id="password" placeholder="Password" ref={register({ required: true })} />
               <Label htmlFor="password">Password</Label>
               <Text
                 sx={{

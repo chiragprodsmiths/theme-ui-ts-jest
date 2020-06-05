@@ -17,6 +17,10 @@ const InputVariants: IInputVariants = {
     color: 'text',
     width: '100%',
     lineHeight: 1.4,
+    '&::-webkit-input-placeholder': {
+      opacity: 0,
+      transition: 'inherit',
+    },
     '&:focus': {
       borderColor: 'link',
     },
@@ -39,10 +43,10 @@ const InputVariants: IInputVariants = {
       fontSize: 1,
       color: 'link',
     },
-    '&:valid': {
+    '&:not(:placeholder-shown)': {
       borderColor: 'link',
     },
-    '&:valid + label': {
+    '&:not(:placeholder-shown) + label': {
       transform: 'translate(0, -8px)',
       cursor: 'pointer',
       px: '2px',
