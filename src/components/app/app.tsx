@@ -9,6 +9,7 @@ type Props = {};
 export const App: React.FC<Props> = () => {
   return (
     <ThemeProvider theme={theme}>
+      {/* <PublicRouter /> */}
       <ProtectedRouter />
     </ThemeProvider>
   );

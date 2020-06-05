@@ -1,19 +1,14 @@
 import * as React from 'react';
 
-import Login from 'components/login';
+import LoginPage from 'components/login';
 
 type PropTypes = {};
 
 /**
- * Home Page
+ * Login Page
  */
-const Home: React.FC<PropTypes> = () => {
-  return (
-    <div>
-      <h1>Login Page</h1>
-      <Login />
-    </div>
-  );
+const Login: React.FC<PropTypes> = () => {
+  return <LoginPage />;
 };
 
-export default Home;
+export default Login;

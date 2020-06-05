@@ -1,5 +1,5 @@
 import { TypeColorValue } from './theme.colors.values';
-import { maroon, black, white, red, green, blue, yellow, grey } from './theme.colors.names';
+import { maroon, black, white, red, green, blue, yellow, grey, shadow } from './theme.colors.names';
 
 type TypeColorPalette = {
   maroon: TypeColorValue[];
@@ -10,6 +10,7 @@ type TypeColorPalette = {
   blue: TypeColorValue[];
   yellow: TypeColorValue[];
   grey: TypeColorValue[];
+  shadow: TypeColorValue[];
 };
 
 export const ColorPalette: TypeColorPalette = {
@@ -21,4 +22,5 @@ export const ColorPalette: TypeColorPalette = {
   blue,
   yellow,
   grey,
+  shadow,
 };

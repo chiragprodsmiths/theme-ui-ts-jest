@@ -1,5 +1,6 @@
 export enum EnumCardsVariants {
   'DASHBOARD_TAB' = 'dashboardTab',
+  'POPOVER' = 'popover',
 }
 
 export type ICardsVariants = Record<EnumCardsVariants, any>;
@@ -15,6 +16,17 @@ const CardsVariants: ICardsVariants = {
     '&:hover': {
       boxShadow: 'cardHover',
     },
+  },
+  popover: {
+    position: 'absolute',
+    right: 0,
+    background: 'white',
+    textAlign: 'left',
+    minWidth: 272,
+    mt: 3,
+    boxShadow: 'buttonOutlineShadow',
+    padding: 0,
+    zIndex: 1,
   },
 };
 

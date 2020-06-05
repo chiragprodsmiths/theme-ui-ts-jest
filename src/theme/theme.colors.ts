@@ -27,6 +27,9 @@ type Variants = {
   black: TypeColorValue;
   white: TypeColorValue;
   primaryIcon: TypeColorValue;
+  authBg: TypeColorValue;
+  buttonHoverShadow: TypeColorValue;
+  buttonOutlineShadow: TypeColorValue;
 };
 
 const Colors: Variants = {
@@ -51,6 +54,9 @@ const Colors: Variants = {
   pinkShadow: ColorPalette.maroon[1],
   activeShadow: ColorPalette.maroon[2],
   primaryIcon: ColorPalette.grey[1],
+  authBg: ColorPalette.shadow[0],
+  buttonHoverShadow: ColorPalette.shadow[2],
+  buttonOutlineShadow: ColorPalette.shadow[1],
 };
 
 export default Colors;
