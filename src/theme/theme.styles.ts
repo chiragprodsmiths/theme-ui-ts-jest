@@ -7,34 +7,34 @@ const Styles = {
     lineHeight: 'body',
     WebkitFontSmoothing: 'antialiased',
     p: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     input: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     textarea: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h1: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h2: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h3: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h4: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h5: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     h6: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
     },
     button: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
       outline: 'none',
       cursor: 'pointer',
       position: 'relative',
@@ -43,7 +43,7 @@ const Styles = {
       },
     },
     a: {
-      fontFamily: 'imbPlex',
+      fontFamily: 'regular',
       textDecoration: 'none',
       color: 'link',
     },

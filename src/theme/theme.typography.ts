@@ -10,7 +10,6 @@ const Typography: Types.Typography = {
     semiBold: FontNames.SEMI_BOLD,
     bold: FontNames.BOLD,
     heading: FontNames.SEMI_BOLD, // TODO: @ankit to check heading fonts
-    // imbPlex: 'IBM Plex Sans, sans-serif',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48],
   fontWeights: {
