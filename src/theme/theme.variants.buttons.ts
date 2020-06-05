@@ -18,15 +18,37 @@ export type IButtonVariants = Record<EnumButtonVariants, any>;
  */
 const ButtonVariants: IButtonVariants = {
   primary: {
-    px: '3',
-    py: '14px',
+    px: 3,
+    py: 3,
     color: 'white',
     bg: 'primary',
-    minWidth: '178px',
+    minWidth: '176px',
+    boxShadow: 'buttonShadow',
+    '&:hover': {
+      boxShadow: 'buttonHoverShadow',
+    },
+    '&:disabled': {
+      boxShadow: 'none',
+      bg: 'greyShadow',
+      color: 'muted',
+    },
   },
   outline: {
-    color: 'white',
-    bg: 'secondary',
+    px: 3,
+    py: 3,
+    bg: 'transparent',
+    border: '1px solid',
+    minWidth: '176px',
+    borderColor: 'textLight',
+    color: 'text',
+    '&:hover': {
+      boxShadow: 'buttonOutlineShadow',
+    },
+    '&:disabled': {
+      boxShadow: 'none',
+      borderColor: 'border',
+      color: 'border',
+    },
   },
   icon: {
     width: 'auto',
@@ -51,9 +73,6 @@ const ButtonVariants: IButtonVariants = {
     color: 'textLight',
     borderRadius: 'none',
     minWidth: 88,
-    // borderBottom: '2px solid',
-    // borderColor: 'transparent',
-    // mb: '-2px',
     '&:hover': {
       color: 'text',
     },

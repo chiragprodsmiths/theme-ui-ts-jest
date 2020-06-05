@@ -1,47 +1,55 @@
 const Styles = {
   root: {
-    fontFamily: 'default',
+    fontFamily: 'body',
     fontWeight: 'body',
     lineHeight: 'body',
     WebkitFontSmoothing: 'antialiased',
     p: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     input: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     textarea: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h1: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h2: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h3: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h4: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h5: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     h6: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
     },
     button: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
       outline: 'none',
+      cursor: 'pointer',
+      position: 'relative',
       '&:focus': {
         outline: 'none',
       },
     },
     a: {
-      fontFamily: 'default',
+      fontFamily: 'imbPlex',
       textDecoration: 'none',
       color: 'link',
+    },
+    img: {
+      maxWidth: '100%',
+    },
+    form: {
+      width: '100%',
     },
   },
 };

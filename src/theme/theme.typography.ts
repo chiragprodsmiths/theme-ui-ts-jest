@@ -2,7 +2,9 @@ import * as Types from './types';
 
 const Typography: Types.Typography = {
   fonts: {
-    default: 'IBM Plex Sans, sans-serif',
+    body: 'IBM Plex Sans, sans-serif',
+    heading: 'IBM Plex Sans, sans-serif',
+    imbPlex: 'IBM Plex Sans, sans-serif',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48],
   fontWeights: {

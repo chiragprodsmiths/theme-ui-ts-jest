@@ -1,34 +1,36 @@
-import Styles from './theme.styles';
+import BadgesVariants from './theme.variants.badges';
+import ButtonVariants from './theme.variants.buttons';
+import CardsVariants from './theme.variants.cards';
 import Colors from './theme.colors';
-import Typography from './theme.typography';
+import InputVariants from './theme.variants.input';
+import ImagesVariants from './theme.variants.images';
+import LinkVariants from './theme.variants.links';
 import Radii from './theme.radii';
+import Styles from './theme.styles';
 import Shadows from './theme.shadows';
 import Space from './theme.spaces';
-import ButtonVariants from './theme.variants.buttons';
-import BadgesVariants from './theme.variants.badges';
-import InputVariants from './theme.variants.input';
-import LinkVariants from './theme.variants.links';
-import ImagesVariants from './theme.variants.images';
-import CardsVariants from './theme.variants.cards';
 import TextVariants from './theme.variants.text';
+import Typography from './theme.typography';
 import Variants from './theme.variants';
 
 export const theme = {
-  styles: Styles,
+  badges: BadgesVariants,
+  buttons: ButtonVariants,
   colors: Colors,
+  cards: CardsVariants,
   fonts: Typography.fonts,
   fontSizes: Typography.fontSizes,
   fontWeights: Typography.fontWeights,
-  lineHeights: Typography.lineHeights,
-  space: Space,
-  shadows: Shadows,
-  radii: Radii,
-  buttons: ButtonVariants,
-  badges: BadgesVariants,
-  input: InputVariants,
-  links: LinkVariants,
-  cards: CardsVariants,
+  forms: {
+    ...InputVariants,
+  },
   images: ImagesVariants,
+  lineHeights: Typography.lineHeights,
+  links: LinkVariants,
+  radii: Radii,
+  shadows: Shadows,
+  space: Space,
+  styles: Styles,
   text: TextVariants,
   variants: Variants,
 };

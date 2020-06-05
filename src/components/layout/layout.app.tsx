@@ -16,10 +16,8 @@ type PropTypes = {
 const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
   return (
     <>
-      <div>
-        <Header />
-        <SubHeader />
-      </div>
+      <Header />
+      <SubHeader />
       {/* <BreadCrumbs /> */}
       <main>
         <Container px={8} py={8}>
