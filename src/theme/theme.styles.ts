@@ -1,7 +1,9 @@
+import fontFaces from './theme.fontface';
+
 const Styles = {
   root: {
+    ...fontFaces,
     fontFamily: 'body',
-    fontWeight: 'body',
     lineHeight: 'body',
     WebkitFontSmoothing: 'antialiased',
     button: {

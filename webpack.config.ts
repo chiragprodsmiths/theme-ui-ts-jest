@@ -48,6 +48,7 @@ const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
         options: {
           limit: 10240,
           mimetype: 'application/octet-stream',
+          name: '[name].[ext]',
         },
       },
     ],

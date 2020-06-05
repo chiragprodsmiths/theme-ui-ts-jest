@@ -1,8 +1,14 @@
+import { FontNames } from 'theme/theme.fontface';
 import * as Types from './types';
 
 const Typography: Types.Typography = {
   fonts: {
-    body: 'IBM Plex Sans, sans-serif',
+    body: FontNames.REGULAR,
+    light: FontNames.LIGHT,
+    regular: FontNames.REGULAR,
+    medium: FontNames.MEDIUM,
+    semiBold: FontNames.SEMI_BOLD,
+    bold: FontNames.BOLD,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 40, 48],
   fontWeights: {
