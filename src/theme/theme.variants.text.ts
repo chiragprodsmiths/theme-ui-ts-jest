@@ -1,6 +1,6 @@
 export enum EnumTextVariants {
   'HEADING' = 'heading',
-  'WHITE_X_SMALL' = 'whiteXSmall',
+  'WHITE_SMALL' = 'whiteSmall',
 }
 
 export type ITextVariants = Record<EnumTextVariants, any>;
@@ -10,8 +10,8 @@ const TextVariants: ITextVariants = {
     fontFamily: 'heading',
     lineHeight: 'heading',
   },
-  whiteXSmall: {
-    fontSize: 10,
+  whiteSmall: {
+    fontSize: 12,
     color: 'white',
   },
 };

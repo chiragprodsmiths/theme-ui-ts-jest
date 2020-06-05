@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 /**
  * Theme UI Component
  */
-import { Spinner, Button, Label, Input, Text, Box, Flex, Link, Image } from 'theme-ui';
+import { Spinner, Button, Label, Input, Text, Box, Flex, Link, Image, Heading } from 'theme-ui';
 /**
  * Images
  */
@@ -47,12 +47,16 @@ export const Login: React.FC<PropTypes> = () => {
     <Flex sx={{ bg: 'white', minHeight: '100vh', alignItems: 'center' }}>
       <Box variant="signInBg" sx={{ backgroundImage: `url(${SignInBg})` }}>
         <Box variant="signInOverlay" />
-        <Box sx={{ color: 'white', position: 'relative', textAlign: 'center' }}>
-          <Text sx={{ fontSize: 40, mb: 2, fontWeight: 'thin' }}>Welcome</Text>
-          <Text sx={{ lineHeight: 'normal' }}>Fleet management and maintenance solution for fleets of all sizes</Text>
+        <Box sx={{ position: 'relative', textAlign: 'center' }}>
+          <Heading as="h1" color="white" sx={{ fontSize: 40, mb: 2, fontFamily: 'light' }}>
+            Welcome
+          </Heading>
+          <Text color="white" sx={{ lineHeight: 'normal' }}>
+            Fleet management and maintenance solution for fleets of all sizes
+          </Text>
         </Box>
         <Box sx={{ position: 'absolute', bottom: 6, textAlign: 'center', width: 'calc(100% - 120px)' }}>
-          <Text variant="whiteXSmall">Powered by Fleet manager</Text>
+          <Text variant="whiteSmall">Powered by Fleet manager</Text>
         </Box>
       </Box>
       <Box sx={{ flex: '1 1 70%' }}>
@@ -61,16 +65,14 @@ export const Login: React.FC<PropTypes> = () => {
             <Box sx={{ mb: 10 }}>
               <Flex sx={{ alignItems: 'center' }}>
                 <Image src={fleetLogo} variant="logo" />
-                <Text
-                  sx={{
-                    fontWeight: 'semiBold',
-                    color: 'logoText',
-                  }}>
+                <Heading color="logoText" sx={{ fontFamily: 'semiBold' }}>
                   BRAND LOGO
-                </Text>
+                </Heading>
               </Flex>
             </Box>
-            <Text sx={{ mb: 10, fontSize: 5, fontWeight: 'medium' }}>Sign in</Text>
+            <Heading as="h1" sx={{ mb: 10 }}>
+              Sign in
+            </Heading>
             <Box variant="inputWrap">
               <Input id="email" placeholder="Email" ref={register({ required: true })} />
               <Label htmlFor="email">Email</Label>
