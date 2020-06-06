@@ -48,7 +48,7 @@ export const Login: React.FC<PropTypes> = () => {
     setModal(true);
   };
 
-  const onModalClose = () => {
+  const onModalClose = (): void => {
     setModal(false);
   };
 

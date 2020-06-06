@@ -5,9 +5,8 @@ import React from 'react';
 import { Box, Flex, Heading, Close } from 'theme-ui';
 
 type PropTypes = {
-  children?: React.ReactElement | any;
-  // TODO:// @chirag chec onclose type
-  onClose?: any;
+  children: React.ReactElement | any;
+  onClose: (event: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => void;
   visible: boolean;
   title: string;
 };
@@ -34,7 +33,6 @@ export const Modal: React.FC<PropTypes> = (props: PropTypes) => {
 
 Modal.defaultProps = {
   visible: false,
-  title: '',
 };
 
 export default Modal;
