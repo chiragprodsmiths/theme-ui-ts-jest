@@ -1,7 +1,7 @@
 export type TodoEntity = {
-  id: Number;
-  text: String;
-  complete: Boolean;
+  id: number;
+  text: string;
+  complete: boolean;
 };
 
 export type TodosQueryResult = {

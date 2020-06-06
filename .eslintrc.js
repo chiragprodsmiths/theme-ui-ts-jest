@@ -15,16 +15,21 @@ module.exports = {
       pragma: 'React',
       version: 'detect',
     },
-    'import/resolve': {
-      moduleDirectory: ['node_modules', 'src'],
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
     },
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'prettier'],
   extends: [
     'airbnb-typescript',
-    'prettier/react',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier',
+    'prettier/react',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
@@ -42,6 +47,5 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'no-console': 'off',
     'react/jsx-closing-bracket-location': 'off',
-    indent: ['error', 2],
   },
 };

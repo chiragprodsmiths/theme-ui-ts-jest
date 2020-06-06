@@ -14,7 +14,7 @@ export type Fragment = {
 
 type PropTypes = {
   fragments: Fragment[];
-  root?: Boolean;
+  root?: boolean;
 };
 
 export const BreadCrumb: React.FC<PropTypes> = (props: PropTypes) => {
