@@ -6,6 +6,8 @@ export enum EnumButtonVariants {
   'ICON_LINK' = 'iconLink',
   'TAB' = 'tab',
   'TAB_ACTIVE' = 'tabActive',
+  'CLOSE' = 'close',
+  'LINK' = 'link',
 }
 
 export type IButtonVariants = Record<EnumButtonVariants, any>;
@@ -64,6 +66,13 @@ const ButtonVariants: IButtonVariants = {
     cursor: 'pointer',
     color: 'text',
   },
+  close: {
+    color: 'textLight',
+    px: 0,
+    py: 0,
+    width: 28,
+    height: 28,
+  },
   transparent: {
     bg: 'transparent',
     color: 'inherit',
@@ -103,6 +112,12 @@ const ButtonVariants: IButtonVariants = {
       bg: 'primary',
       borderRadius: 'sm',
     },
+  },
+  link: {
+    color: 'link',
+    fontSize: 1,
+    bg: 'transparent',
+    padding: 0,
   },
 };
 

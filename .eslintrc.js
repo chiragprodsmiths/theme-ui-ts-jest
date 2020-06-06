@@ -46,6 +46,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
     'no-console': 'off',
+    'react/no-unescaped-entities': 'off',
     'react/jsx-closing-bracket-location': 'off',
   },
 };

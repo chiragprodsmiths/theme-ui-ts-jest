@@ -30,6 +30,7 @@ type Variants = {
   authBg: TypeColorValue;
   buttonHoverShadow: TypeColorValue;
   buttonOutlineShadow: TypeColorValue;
+  overlay: TypeColorValue;
 };
 
 const Colors: Variants = {
@@ -57,6 +58,7 @@ const Colors: Variants = {
   authBg: ColorPalette.shadow[0],
   buttonHoverShadow: ColorPalette.shadow[2],
   buttonOutlineShadow: ColorPalette.shadow[1],
+  overlay: ColorPalette.shadow[3],
 };
 
 export default Colors;

@@ -31,6 +31,7 @@ export const colorValues = asUniqueArray([
   '#656E7FE6', // shadow[0]
   '#656E7F52', // shadow[1]
   '#7B053799', // shadow[2]
+  'rgba(15, 19, 30, 0.8)', // shadow[3] // 30
 ]);
 
 export type TypeColorValue = typeof colorValues[number];
