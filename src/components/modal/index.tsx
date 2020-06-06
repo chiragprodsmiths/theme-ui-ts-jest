@@ -8,7 +8,7 @@ type PropTypes = {
   title: string;
 };
 
-export const Modal: React.FC<PropTypes> = (props: PropTypes) => {
+const Modal: React.FC<PropTypes> = (props: PropTypes) => {
   const { children, onClose, visible, title } = props;
   return (
     <>

@@ -5,7 +5,7 @@ import { FormData } from './types';
 
 export type PropTypes = {};
 
-export const RequestAnAccount: React.FC<PropTypes> = () => {
+const RequestAnAccount: React.FC<PropTypes> = () => {
   const { register, handleSubmit, errors } = useForm<FormData>();
 
   console.log(errors);
