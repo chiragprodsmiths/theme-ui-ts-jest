@@ -24,4 +24,9 @@ export const grey: TypeColorValue[] = asUniqueArray([
   colorValues[25],
 ]);
 
-export const shadow: TypeColorValue[] = asUniqueArray([colorValues[27], colorValues[28], colorValues[29]]);
+export const shadow: TypeColorValue[] = asUniqueArray([
+  colorValues[27],
+  colorValues[28],
+  colorValues[29],
+  colorValues[30],
+]);

@@ -6,6 +6,9 @@ export enum EnumVariants {
   'SIGN_IN_OVERLAY' = 'signInOverlay',
   'BUTTON_LOADER_PRIMARY' = 'buttonLoaderPrimary',
   'BUTTON_LOADER_WHITE' = 'buttonLoaderWhite',
+  'MODAL_OVERLAY' = 'modalOverlay',
+  'MODAL' = 'modal',
+  'MODAL_BODY' = 'modalBody',
 }
 
 export type IVariants = Record<EnumVariants, any>;
@@ -59,6 +62,36 @@ const Variants: IVariants = {
     top: 3,
     size: 20,
     stroke: 'primary',
+  },
+  modal: {
+    position: 'fixed',
+    minHeight: '100vh',
+    width: '100%',
+    zIndex: 10,
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalOverlay: {
+    bg: 'overlay',
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  modalBody: {
+    px: 8,
+    pt: 5,
+    pb: 8,
+    bg: 'white',
+    borderRadius: 'sm',
+    position: 'absolute',
+    zIndex: 100,
+    width: 435,
   },
 };
 
