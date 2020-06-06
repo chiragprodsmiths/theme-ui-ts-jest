@@ -38,7 +38,6 @@ const InputVariants: IInputVariants = {
     },
     '&:focus + label': {
       transform: 'translate(0, -8px)',
-      cursor: 'pointer',
       px: '2px',
       fontSize: 1,
       color: 'link',
@@ -48,7 +47,6 @@ const InputVariants: IInputVariants = {
     },
     '&:not(:placeholder-shown) + label': {
       transform: 'translate(0, -8px)',
-      cursor: 'pointer',
       px: '2px',
       fontSize: 1,
       color: 'link',
