@@ -1,6 +1,6 @@
 export enum EnumInputVariants {
   'INPUT' = 'input',
-  'ERROR' = 'error',
+  'INPUT_ERROR' = 'inputError',
 }
 
 export type IInputVariants = Record<EnumInputVariants, any>;
@@ -62,7 +62,7 @@ const InputVariants: IInputVariants = {
       bg: 'transparent',
     },
   },
-  error: {
+  inputError: {
     px: 4,
     py: 3,
     bg: 'white',
@@ -71,6 +71,10 @@ const InputVariants: IInputVariants = {
     color: 'muted',
     borderColor: 'error',
     outline: 'none',
+    '&::-webkit-input-placeholder': {
+      opacity: 0,
+      transition: 'inherit',
+    },
     '& + label': {
       position: 'absolute',
       top: 0,
@@ -89,7 +93,7 @@ const InputVariants: IInputVariants = {
       fontSize: 1,
       color: 'error',
     },
-    '&:valid + label': {
+    '&:not(:placeholder-shown) + label': {
       transform: 'translate(0, -8px)',
       cursor: 'pointer',
       px: '2px',
