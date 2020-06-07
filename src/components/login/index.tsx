@@ -10,8 +10,8 @@ import fleetLogo from 'images/logo.png';
 
 import { useMutation } from 'urql';
 import { loginQuery } from 'queries/queries.login';
-import { FormData, Context } from './types';
-import { useValidationResolver } from './validation';
+import { FormData } from './types';
+import { validationSchema } from './validation';
 
 /**
  * prop types
@@ -21,14 +21,8 @@ export type PropTypes = {};
 export const Login: React.FC<PropTypes> = () => {
   const [openRequestAnAccount, toggleRequestAnAccountModal] = useState<boolean>(false);
 
-  // validation resolver
-  const validationResolver = useValidationResolver();
-
   // react hook form
-  const { register, handleSubmit, errors } = useForm<FormData, Context>({
-    validationResolver,
-    validationContext: {},
-  });
+  const { register, handleSubmit, errors } = useForm<FormData>({ validationSchema });
 
   console.log(errors);
 
