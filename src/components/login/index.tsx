@@ -78,6 +78,8 @@ export const Login: React.FC<PropTypes> = () => {
         </Heading>
         <Box variant="inputWrap">
           <Input
+            // TODO:// @chirag if error ? input="inputError" : input="input"
+            variant="inputError"
             id="email"
             type="email"
             name="userName"
@@ -90,15 +92,7 @@ export const Login: React.FC<PropTypes> = () => {
           />
           <Label htmlFor="email">Email</Label>
           {errors.userName && (
-            <Text
-              id="userNameError"
-              sx={{
-                color: 'error',
-                pl: 4,
-                pt: 1,
-                position: 'absolute',
-                display: 'none',
-              }}>
+            <Text id="userNameError" variant="inputError">
               {errors.userName.message}
             </Text>
           )}
@@ -121,15 +115,7 @@ export const Login: React.FC<PropTypes> = () => {
           />
           <Label htmlFor="password">Password</Label>
           {errors.password && (
-            <Text
-              id="passwordError"
-              sx={{
-                color: 'error',
-                pl: 4,
-                pt: 1,
-                position: 'absolute',
-                display: 'none',
-              }}>
+            <Text id="passwordError" variant="inputError">
               {errors.password.message}
             </Text>
           )}

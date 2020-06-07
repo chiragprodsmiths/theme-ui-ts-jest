@@ -31,6 +31,7 @@ type Variants = {
   buttonHoverShadow: TypeColorValue;
   buttonOutlineShadow: TypeColorValue;
   overlay: TypeColorValue;
+  error: TypeColorValue;
 };
 
 const Colors: Variants = {
@@ -59,6 +60,7 @@ const Colors: Variants = {
   buttonHoverShadow: ColorPalette.shadow[2],
   buttonOutlineShadow: ColorPalette.shadow[1],
   overlay: ColorPalette.shadow[3],
+  error: ColorPalette.red[0],
 };
 
 export default Colors;
