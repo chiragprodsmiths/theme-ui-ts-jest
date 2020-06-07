@@ -1,9 +1,11 @@
-import Joi from '@hapi/joi';
+import * as yup from 'yup';
 import { FormData } from './types';
 
-export const validationSchema: Joi.ObjectSchema<FormData> = Joi.object<FormData>({
-  name: Joi.string().required(),
-  email: Joi.string().required(),
-  organization: Joi.string().required().min(5),
-  title: Joi.string().required(),
-});
+export const validationSchema = yup
+  .object<FormData>({
+    name: yup.string().defined(),
+    email: yup.string().defined().email(),
+    organization: yup.string().defined().min(5),
+    title: yup.string().required(),
+  })
+  .defined();

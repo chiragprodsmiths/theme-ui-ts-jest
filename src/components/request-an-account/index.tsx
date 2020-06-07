@@ -2,11 +2,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Label, Input, Box, Flex, Text } from 'theme-ui';
 import { FormData } from './types';
+import { validationSchema } from './validation';
 
 export type PropTypes = {};
 
 const RequestAnAccount: React.FC<PropTypes> = () => {
-  const { register, handleSubmit, errors } = useForm<FormData>();
+  const { register, handleSubmit, errors } = useForm<FormData>({ validationSchema });
 
   console.log(errors);
 
