@@ -19,11 +19,11 @@ const LinkVariants: ILinkVariants = {
     },
   },
   sidebar: {
-    lineHeight: 10,
+    lineHeight: '40px',
     pl: 3,
   },
   sidebarActive: {
-    lineHeight: 10,
+    lineHeight: '40px',
     px: 3,
     py: 2,
     bg: 'primary',
@@ -35,8 +35,6 @@ const LinkVariants: ILinkVariants = {
     display: 'flex',
     alignItems: 'center',
     color: 'link',
-    fontSize: 14,
-    lineHeight: 1,
   },
   popoverListItem: {
     display: 'block',

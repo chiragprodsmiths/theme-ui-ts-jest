@@ -17,12 +17,25 @@ const InputVariants: IInputVariants = {
     color: 'text',
     width: '100%',
     lineHeight: 1.4,
+    fontSize: 2,
     '&::-webkit-input-placeholder': {
       opacity: 0,
       transition: 'inherit',
     },
     '&:focus': {
       borderColor: 'link',
+    },
+    '&:-internal-autofill-selected': {
+      boxShadow: '0 0 0px 1000px white inset',
+    },
+    '&:-webkit-autofill': {
+      '&:first-line': {
+        font: '400 16px IBMPlexSansRegular',
+        lineHeight: 1.4,
+      },
+      '&:focus': {
+        boxShadow: '0 0 0px 1000px white inset',
+      },
     },
     '& + label': {
       position: 'absolute',

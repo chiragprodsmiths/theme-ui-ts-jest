@@ -2,7 +2,7 @@ import * as React from 'react';
 /**
  * Theme UI Components
  */
-import { IconButton, Container, Flex, Image, Box, Text, Heading, Link } from 'theme-ui';
+import { Link, Card, IconButton, Container, Flex, Image, Box, Text, Heading } from 'theme-ui';
 /**
  * Custom Components
  */
@@ -67,12 +67,26 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
           </Box>
           <Box sx={{ width: '30%', textAlign: 'right' }}>
             <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-              <Box>
+              <Box sx={{ position: 'relative' }}>
                 <IconButton>
                   <BrandIcon sx={{ mr: 2 }} />
                   Brand
                   <ChevronDown sx={{ ml: 2 }} />
                 </IconButton>
+                <Card variant="popover">
+                  <Link variant="popoverListItem" href="/">
+                    Deutsche Telekom
+                  </Link>
+                  <Link variant="popoverListItemActive" href="/">
+                    Bayerische Motoren Werke
+                  </Link>
+                  <Link variant="popoverListItem" href="/">
+                    Bosch
+                  </Link>
+                  <Link variant="popoverListItem" href="/">
+                    Sparkassen-Finanzgruppe
+                  </Link>
+                </Card>
               </Box>
               <Box>
                 <Flex>
