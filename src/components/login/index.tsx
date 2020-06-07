@@ -78,8 +78,7 @@ export const Login: React.FC<PropTypes> = () => {
         </Heading>
         <Box variant="inputWrap">
           <Input
-            // TODO:// @chirag if error ? input="inputError" : input="input"
-            variant="inputError"
+            variant={errors.userName ? 'inputError' : 'input'}
             id="email"
             type="email"
             name="userName"
@@ -104,6 +103,7 @@ export const Login: React.FC<PropTypes> = () => {
         </Flex>
         <Box variant="inputWrap">
           <Input
+            variant={errors.password ? 'inputError' : 'input'}
             id="password"
             type="password"
             name="password"
