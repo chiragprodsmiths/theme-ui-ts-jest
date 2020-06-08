@@ -21,6 +21,7 @@
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet"
   },
   "dependencies": {
+    "@types/react-select": "^3.0.13",
     "@types/yup": "^0.29.2",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
@@ -30,6 +31,7 @@
     "react-i18next": "^11.5.0",
     "react-router": "^6.0.0-alpha.5",
     "react-router-dom": "^6.0.0-alpha.5",
+    "react-select": "^3.1.0",
     "theme-ui": "0.3.1",
     "typestyle": "^2.1.0",
     "urql": "^1.9.7",
