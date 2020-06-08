@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Textarea, IconButton, Text, Flex, Box, Grid, Card, Link } from 'theme-ui';
+import { Button, Textarea, IconButton, Text, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
 import OverflowIcon from 'components/icons/icon.overflow';
 
 type PropTypes = {};
@@ -182,28 +182,127 @@ const AddBrand: React.FC<PropTypes> = () => {
             </Flex>
             <Box px="12" pt="10" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="brand"
+                    name="brand"
+                    placeholder="Brand"
+                    autoComplete="brand"
+                    autoFocus
+                    aria-describedby="brandError"
+                  />
+                  <Label htmlFor="brand">Email</Label>
+                </Box>
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="parentCompany"
+                    name="parentCompany"
+                    placeholder="Parent Company"
+                    autoComplete="parentCompany"
+                    autoFocus
+                    aria-describedby="userNameError"
+                  />
+                  <Label htmlFor="parentCompany">Parent Company</Label>
+                </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="customerName"
+                    name="Customer Name"
+                    placeholder="Customer Name"
+                    autoComplete="customerName"
+                    autoFocus
+                    aria-describedby="userNameError"
+                  />
+                  <Label htmlFor="customerName">Customer Name</Label>
+                </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="language"
+                    name="language"
+                    placeholder="language"
+                    autoComplete="language"
+                    autoFocus
+                    aria-describedby="languageError"
+                  />
+                  <Label htmlFor="language">Language</Label>
+                </Box>
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="currency"
+                    name="currency"
+                    placeholder="currency"
+                    autoComplete="currency"
+                    autoFocus
+                    aria-describedby="currencyError"
+                  />
+                  <Label htmlFor="currency">Currency</Label>
+                </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="orgEmail"
+                    type="email"
+                    name="orgEmail"
+                    placeholder="Org email"
+                    autoComplete="orgEmail"
+                    autoFocus
+                    aria-describedby="orgEmailError"
+                  />
+                  <Label htmlFor="orgEmail">Org email</Label>
+                </Box>
                 <Box variant="">
                   <Grid gap={10} columns={[2, '7fr 3fr']}>
-                    <Box variant="inputWrap" />
-                    <Box variant="inputWrap" />
+                    <Box variant="inputWrap">
+                      <Input
+                        variant="input"
+                        id="phone"
+                        name="phone"
+                        placeholder="Phone"
+                        autoComplete="phone"
+                        autoFocus
+                        aria-describedby="phoneError"
+                      />
+                      <Label htmlFor="phone">Phone</Label>
+                    </Box>
+                    <Box variant="inputWrap">
+                      <Input
+                        variant="input"
+                        id="ext"
+                        name="userName"
+                        placeholder="Ext"
+                        autoComplete="ext"
+                        autoFocus
+                        aria-describedby="extError"
+                      />
+                      <Label htmlFor="ext">Ext</Label>
+                    </Box>
                   </Grid>
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="fax"
+                    name="userName"
+                    placeholder="Fax"
+                    autoComplete="fax"
+                    autoFocus
+                    aria-describedby="faxError"
+                  />
+                  <Label htmlFor="fax">Fax</Label>
+                </Box>
               </Grid>
             </Box>
             <Box px="12" pt="10" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
@@ -211,16 +310,71 @@ const AddBrand: React.FC<PropTypes> = () => {
                 Address
               </Text>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="to"
+                    name="userName"
+                    placeholder="To"
+                    autoComplete="to"
+                    autoFocus
+                    aria-describedby="toError"
+                  />
+                  <Label htmlFor="to">To</Label>
+                </Box>
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="street"
+                    name="street"
+                    placeholder="Street"
+                    autoComplete="street"
+                    autoFocus
+                    aria-describedby="streetError"
+                  />
+                  <Label htmlFor="street">Street</Label>
+                </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="city"
+                    name="city"
+                    placeholder="City"
+                    autoComplete="city"
+                    autoFocus
+                    aria-describedby="cityError"
+                  />
+                  <Label htmlFor="city">City</Label>
+                </Box>
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="country"
+                    name="country"
+                    placeholder="Country"
+                    autoComplete="country"
+                    autoFocus
+                    aria-describedby="countryError"
+                  />
+                  <Label htmlFor="country">Country</Label>
+                </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap" />
-                <Box variant="inputWrap" />
+                <Box variant="inputWrap">
+                  <Input
+                    variant="input"
+                    id="zip"
+                    type="zip"
+                    name="zip"
+                    placeholder="Zip"
+                    autoComplete="zip"
+                    autoFocus
+                    aria-describedby="userNameError"
+                  />
+                  <Label htmlFor="zip">Zip</Label>
+                </Box>
               </Grid>
             </Box>
           </Card>

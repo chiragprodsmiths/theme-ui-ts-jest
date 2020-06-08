@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 /**
  * Theme UI Components
  */
@@ -27,6 +27,12 @@ type PropTypes = {
  * used for protected app pages
  */
 const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
+  const [openBrandList, toggleBrandList] = useState<boolean>(false);
+
+  const onClickBrand = (): void => {
+    toggleBrandList(!openBrandList);
+  };
+
   return (
     <>
       <header>
@@ -68,12 +74,12 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
           <Box sx={{ width: '30%', textAlign: 'right' }}>
             <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
               <Box sx={{ position: 'relative' }}>
-                <IconButton>
+                <IconButton onClick={onClickBrand}>
                   <BrandIcon sx={{ mr: 2 }} />
                   Brand
                   <ChevronDown sx={{ ml: 2 }} />
                 </IconButton>
-                <Card variant="popover">
+                <Card variant="popover" sx={{ display: openBrandList ? 'block' : 'none' }}>
                   <Link variant="popoverListItem" href="/">
                     Deutsche Telekom
                   </Link>
