@@ -380,7 +380,6 @@ const AddBrand: React.FC<PropTypes> = () => {
           </Card>
         </Box>
       </Grid>
-      <h1>Add New Brand Page</h1>
     </>
   );
 };

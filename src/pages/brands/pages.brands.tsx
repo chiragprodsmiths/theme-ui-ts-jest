@@ -60,13 +60,15 @@ const Brands: React.FC<PropTypes> = () => {
           </Flex>
         </Box>
         <Box>
-          <Button>New Customer</Button>
+          <Button as={Link} to="add">
+            New Customer
+          </Button>
         </Box>
       </Flex>
-      <Flex mt="5">
-        <Button variant="pagination" mr="3">
+      <Flex mt="5" sx={{ justifyContent: 'flex-end' }}>
+        {/* <Button variant="pagination" mr="3">
           History
-        </Button>
+        </Button> */}
         <Box variant="paginationWrap">
           <Button variant="pagination">
             <Box as="span" variant="paginationPrev">
@@ -88,13 +90,12 @@ const Brands: React.FC<PropTypes> = () => {
           </Button>
         </Box>
       </Flex>
-      <h1>Brands Listing Page</h1>
-      <ul>
+      {/* <ul>
         <li>
-          <Link to="add-new-brand">Add New Brand</Link>
+          <Link to="add">Add New Brand</Link>
         </li>
-      </ul>
-      <h2>Click below to edit brands</h2>
+      </ul> */}
+      {/* <h2>Click below to edit brands</h2>
       <ul>
         {[...Array(10).keys()].map((key: number) => (
           <li key={String(key)}>
@@ -103,7 +104,7 @@ const Brands: React.FC<PropTypes> = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
