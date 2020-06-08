@@ -9,6 +9,9 @@ export enum EnumVariants {
   'MODAL_OVERLAY' = 'modalOverlay',
   'MODAL' = 'modal',
   'MODAL_BODY' = 'modalBody',
+  'PAGINATION_WRAP' = 'paginationWrap',
+  'PAGINATION_PREV' = 'paginationPrev',
+  'PAGINATION_Next' = 'paginationNext',
 }
 
 export type IVariants = Record<EnumVariants, any>;
@@ -92,6 +95,37 @@ const Variants: IVariants = {
     position: 'absolute',
     zIndex: 100,
     width: 435,
+  },
+  paginationWrap: {
+    listStyle: 'none',
+    p: 0,
+    display: 'inline-flex',
+    bg: 'white',
+    border: '1px solid',
+    borderColor: 'border',
+    borderRadius: 'sm',
+  },
+  paginationPrev: {
+    width: 0,
+    height: 0,
+    textIndent: '9999',
+    display: 'inline-flex',
+    border: '6px solid',
+    borderColor: 'transparent',
+    borderRightColor: 'border',
+    borderLeft: 'none',
+    overflow: 'hidden',
+  },
+  paginationNext: {
+    width: 0,
+    height: 0,
+    textIndent: '9999',
+    display: 'inline-flex',
+    border: '6px solid',
+    borderColor: 'transparent',
+    borderLeftColor: 'border',
+    borderRight: 'none',
+    overflow: 'hidden',
   },
 };
 

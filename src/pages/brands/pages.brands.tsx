@@ -63,6 +63,31 @@ const Brands: React.FC<PropTypes> = () => {
           <Button>New Customer</Button>
         </Box>
       </Flex>
+      <Flex mt="5">
+        <Button variant="pagination" mr="3">
+          History
+        </Button>
+        <Box variant="paginationWrap">
+          <Button variant="pagination">
+            <Box as="span" variant="paginationPrev">
+              Prev
+            </Box>
+          </Button>
+          <Button sx={{ bg: 'primary', color: 'white' }} variant="pagination">
+            1
+          </Button>
+          <Button variant="pagination">2</Button>
+          <Button variant="pagination">3</Button>
+          <Button variant="pagination">4</Button>
+          <Button variant="pagination">...</Button>
+          <Button variant="pagination">25</Button>
+          <Button variant="pagination">
+            <Box as="span" variant="paginationNext">
+              Next
+            </Box>
+          </Button>
+        </Box>
+      </Flex>
       <h1>Brands Listing Page</h1>
       <ul>
         <li>

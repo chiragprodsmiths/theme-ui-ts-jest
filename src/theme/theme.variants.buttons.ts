@@ -8,6 +8,7 @@ export enum EnumButtonVariants {
   'TAB_ACTIVE' = 'tabActive',
   'CLOSE' = 'close',
   'LINK' = 'link',
+  'PAGINATION' = 'pagination',
 }
 
 export type IButtonVariants = Record<EnumButtonVariants, any>;
@@ -118,6 +119,17 @@ const ButtonVariants: IButtonVariants = {
     fontSize: 1,
     bg: 'transparent',
     padding: 0,
+  },
+  pagination: {
+    fontSize: 1,
+    minWidth: '24px',
+    px: 0,
+    py: 1,
+    textAlign: 'center',
+    color: 'textLight',
+    bg: 'transparent',
+    borderRadius: 0,
+    overflow: 'hidden',
   },
 };
 

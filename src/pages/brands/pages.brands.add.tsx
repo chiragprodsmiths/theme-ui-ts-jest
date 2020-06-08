@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconButton, Text, Flex, Box, Grid, Card, Link } from 'theme-ui';
+import { Button, Textarea, IconButton, Text, Flex, Box, Grid, Card, Link } from 'theme-ui';
 import OverflowIcon from 'components/icons/icon.overflow';
 
 type PropTypes = {};
@@ -79,6 +79,13 @@ const AddBrand: React.FC<PropTypes> = () => {
               </Link>
             </Box>
           </Card>
+          <Card mt="8">
+            <Text sx={{ fontSize: 3, color: 'textLight' }}>Notes</Text>
+            <Textarea rows={3} mt="3" />
+            <Button mt="4" sx={{ minWidth: '112px' }}>
+              Save
+            </Button>
+          </Card>
         </Box>
         <Box>
           <Card
@@ -87,7 +94,6 @@ const AddBrand: React.FC<PropTypes> = () => {
               borderRadius: 'default',
               border: '1px solid',
               borderColor: 'border',
-              lineHeight: 'normal',
             }}>
             <Flex
               sx={{
