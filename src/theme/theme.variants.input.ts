@@ -39,7 +39,7 @@ const InputVariants: IInputVariants = {
     },
     '& + label': {
       position: 'absolute',
-      top: 0,
+      top: '2px',
       left: 4,
       bg: 'white',
       display: 'inline-flex',
@@ -50,7 +50,7 @@ const InputVariants: IInputVariants = {
       transform: 'translate(0, 12px)',
     },
     '&:focus + label': {
-      transform: 'translate(0, -8px)',
+      transform: 'translate(0, -9.5px)',
       px: '2px',
       fontSize: 1,
       color: 'link',
@@ -59,7 +59,7 @@ const InputVariants: IInputVariants = {
       borderColor: 'link',
     },
     '&:not(:placeholder-shown) + label': {
-      transform: 'translate(0, -8px)',
+      transform: 'translate(0, -9.5px)',
       px: '2px',
       fontSize: 1,
       color: 'link',
