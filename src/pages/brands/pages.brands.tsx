@@ -60,9 +60,8 @@ const Brands: React.FC<PropTypes> = () => {
           </Flex>
         </Box>
         <Box>
-          <Button as={Link} to="add">
-            New Customer
-          </Button>
+          {/* TODO: @chirag component will come from brands page */}
+          <Button as={Link}>New Brand</Button>
         </Box>
       </Flex>
       <Flex mt="5" sx={{ justifyContent: 'flex-end' }}>

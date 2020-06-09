@@ -11,7 +11,7 @@ import { CustomVariants } from 'theme/theme.variants';
 import Modal from 'components/modal';
 import RequestAnAccount from 'components/request-an-account';
 /**
- * Images
+ * images
  */
 import fleetLogo from 'images/logo.png';
 import { loginQuery } from 'queries/queries.login';

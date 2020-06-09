@@ -1,19 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
-import Select, { components } from 'react-select';
+import React, { CSSProperties } from 'react';
+import Select, { components, CommonProps } from 'react-select';
 import { Flex, Text } from 'theme-ui';
-import Colors from '../../theme/theme.colors';
+import Colors from 'theme/theme.colors'; // TODO: @ankit use theme ui hook useTheme
 
-type ValueContainerPropTypes = {
-  hasValue: boolean;
-  selectProps: any;
-  children: any;
-  placeholder: string;
-};
-
-const ValueContainer = (props: ValueContainerPropTypes) => {
+const ValueContainer: React.FC<CommonProps<any>> = (props) => {
   console.log('select props', props);
   const defaultLabel =
     props.hasValue || props.selectProps.menuIsOpen ? 'selectPlaceholderHasValue' : 'selectPlaceholder';
@@ -30,11 +23,11 @@ const ValueContainer = (props: ValueContainerPropTypes) => {
 // Select Custom Styles
 const CustomStyles = (error: boolean) => {
   return {
-    container: (base: any) => ({
+    container: (base: CSSProperties) => ({
       ...base,
       width: '100%',
     }),
-    control: (base: any, state: any) => {
+    control: (base: CSSProperties, state: any) => {
       const defaultBorder = state.menuIsOpen || state.hasValue ? Colors.link : Colors.border;
       return {
         ...base,
@@ -49,7 +42,7 @@ const CustomStyles = (error: boolean) => {
         },
       };
     },
-    dropdownIndicator: (base: any, state: { selectProps: { menuIsOpen: any } }) => ({
+    dropdownIndicator: (base: CSSProperties, state: { selectProps: { menuIsOpen: any } }) => ({
       ...base,
       padding: '7px 8px',
       ...(state.selectProps.menuIsOpen
@@ -60,7 +53,7 @@ const CustomStyles = (error: boolean) => {
         : {}),
     }),
     indicatorSeparator: () => ({}),
-    menu: (base: any) => ({
+    menu: (base: CSSProperties) => ({
       ...base,
       margin: 0,
       backgroundColor: Colors.white,
@@ -69,14 +62,14 @@ const CustomStyles = (error: boolean) => {
       right: 0,
     }),
     // singleValue: (base: any, state: { selectProps: { menuIsOpen: any } }) => ({
-    singleValue: (base: any) => ({
+    singleValue: (base: CSSProperties) => ({
       ...base,
       overflow: 'initial',
       color: Colors.text,
       lineHeight: 1.4,
       fontSize: 16,
     }),
-    option: (base: any, state: { isSelected: any; isFocused: any }) => {
+    option: (base: CSSProperties, state: { isSelected: any; isFocused: any }) => {
       const defaultBg = state.isFocused ? Colors.primary : Colors.white;
       const defaultColor = state.isFocused ? Colors.white : Colors.text;
       return {
@@ -87,12 +80,12 @@ const CustomStyles = (error: boolean) => {
         color: state.isSelected ? Colors.primary : defaultColor,
       };
     },
-    valueContainer: (base: any) => ({
+    valueContainer: (base: CSSProperties) => ({
       ...base,
       padding: '12px',
       overflow: 'initial',
     }),
-    placeholder: (base: any, state: any) => ({
+    placeholder: (base: CSSProperties, state: any) => ({
       ...base,
       color: state.hasValue ? Colors.link : Colors.textLight,
       transform: state.hasValue ? 'translate(0, -31px)' : 'translate(0, -11px)',
@@ -106,9 +99,9 @@ const CustomStyles = (error: boolean) => {
 };
 
 type PropTypes = {
-  error?: boolean;
+  error: boolean;
   placeholder?: string;
-  options: Record<object, any>;
+  options: any[];
 };
 
 const SelectDropdown: React.FC<PropTypes> = (props: PropTypes) => {

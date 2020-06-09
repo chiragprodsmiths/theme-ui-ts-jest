@@ -2,12 +2,13 @@ import * as React from 'react';
 /**
  * Theme UI Components
  */
-import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
+// import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
+import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link } from 'theme-ui';
 /**
  * Components
  */
 import OverflowIcon from 'components/icons/icon.overflow';
-import ManageUsersForm from 'components/brands/manageUsers';
+import AddBrandForm from 'components/brands/brands.add';
 /**
  * Variants
  */
@@ -163,7 +164,7 @@ const AddBrand: React.FC<PropTypes> = () => {
               <Heading as="h3">Manage Users</Heading>
             </Flex>
             {/* collapse body / sections */}
-            <ManageUsersForm />
+            <AddBrandForm />
             {/* <Box variant={CustomVariants.COLLAPSE_SECTION}>
               <Grid gap={10} columns={[2, null, 3]}>
                 <Box variant={CustomVariants.INPUT_WRAP}>

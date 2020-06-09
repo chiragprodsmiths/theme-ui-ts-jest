@@ -45,7 +45,7 @@ const AllComponents: React.FC<PropTypes> = () => {
         </Text>
       </Box>
       <Box variant="inputWrap">
-        <Select options={options} placeholder="Select option" />
+        <Select options={options} placeholder="Select option" error={false} />
       </Box>
       <Box variant="inputWrap">
         <Select options={options} placeholder="Select with error" error />
