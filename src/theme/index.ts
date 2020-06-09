@@ -1,5 +1,5 @@
 import BadgesVariants from './theme.variants.badges';
-import ButtonVariants from './theme.variants.buttons';
+import { ButtonVariants } from './theme.variants.buttons';
 import CardsVariants from './theme.variants.cards';
 import Colors from './theme.colors';
 import InputVariants from './theme.variants.input';
@@ -11,7 +11,7 @@ import Shadows from './theme.shadows';
 import Space from './theme.spaces';
 import TextVariants from './theme.variants.text';
 import Typography from './theme.typography';
-import Variants from './theme.variants';
+import { Variants } from './theme.variants';
 
 export const theme = {
   badges: BadgesVariants,

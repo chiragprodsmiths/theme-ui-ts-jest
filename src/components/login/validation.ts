@@ -1,9 +1,9 @@
 import * as yup from 'yup';
-import { FormData } from './types';
+import { FormData, UserNameErrorMessages, PasswordErrorMessages } from './types';
 
 export const validationSchema = yup
   .object<FormData>({
-    userName: yup.string().required().email(),
-    password: yup.string().required(),
+    userName: yup.string().required(UserNameErrorMessages.REQUIRED).email(UserNameErrorMessages.VALID),
+    password: yup.string().required(PasswordErrorMessages.REQUIRED),
   })
   .defined();

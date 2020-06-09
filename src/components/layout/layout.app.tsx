@@ -19,7 +19,7 @@ import UserIcon from 'components/icons/icon.user';
 import logo from 'images/logo.png';
 
 type PropTypes = {
-  children?: React.ReactElement;
+  children: React.ReactElement;
 };
 
 /**

@@ -18,7 +18,7 @@ export type IButtonVariants = Record<EnumButtonVariants, any>;
  * py is not from theme, minWidth should be number as all values are pixels by default
  * outline
  */
-const ButtonVariants: IButtonVariants = {
+export const ButtonVariants: IButtonVariants = {
   primary: {
     px: 3,
     py: 3,
@@ -120,5 +120,3 @@ const ButtonVariants: IButtonVariants = {
     padding: 0,
   },
 };
-
-export default ButtonVariants;

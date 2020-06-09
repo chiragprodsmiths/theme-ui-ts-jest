@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Spinner, Button, Label, Input, Text, Box, Flex, Link, Image, Heading } from 'theme-ui';
+import { useMutation } from 'urql';
+/**
+ * app components
+ */
+import { AuthContext } from 'components/auth/auth.provider';
+import { EnumButtonVariants } from 'theme/theme.variants.buttons';
+import { CustomVariants } from 'theme/theme.variants';
 import Modal from 'components/modal';
 import RequestAnAccount from 'components/request-an-account';
 /**
  * Images
  */
 import fleetLogo from 'images/logo.png';
-
-import { useMutation } from 'urql';
 import { loginQuery } from 'queries/queries.login';
-import { FormData } from './types';
+import { FormData, LoginResponse } from './types';
 import { validationSchema } from './validation';
 
 /**
@@ -19,41 +24,46 @@ import { validationSchema } from './validation';
 export type PropTypes = {};
 
 export const Login: React.FC<PropTypes> = () => {
+  const { setAuthenticated, setToken } = useContext(AuthContext);
+  const [loginResult, setLoginResult] = useState<LoginResponse>({ login: { token: '' } });
+  const [loginErrors, setLoginErrors] = useState<boolean>(false);
   const [openRequestAnAccount, toggleRequestAnAccountModal] = useState<boolean>(false);
 
-  // react hook form
-  const { register, handleSubmit, errors } = useForm<FormData>({ validationSchema });
+  // react hook form => types(FormData)
+  const { register, handleSubmit, errors, watch } = useForm<FormData>({ validationSchema });
 
-  console.log(errors);
+  // setup login mutation => types => mutation(loginResponse, loginRequest)
+  const [{ fetching }, login] = useMutation<LoginResponse, FormData>(loginQuery);
 
-  const [{ fetching, data: loginResult, error }, login] = useMutation(loginQuery);
+  const { userName: watchedUserName, password: watchedPassword } = watch();
 
-  if (fetching) return <p>Checking Credentials Please wait....</p>;
+  // using this effect to clear submit errors if any of the field changes after error
+  useEffect(() => {
+    setLoginErrors(false);
+  }, [watchedUserName, watchedPassword]);
 
-  if (error) {
-    return <p>{error.message}</p>;
-  }
-
-  if (loginResult) {
-    console.log(loginResult.login.token);
-    return (
-      <>
-        <p>Login Successfull</p>
-        <p>{loginResult.login.token}</p>
-      </>
-    );
-  }
-
+  // open register account modal
   const onRequestAnAccountOpen = (): void => {
     toggleRequestAnAccountModal(true);
   };
 
+  // close register account modal
   const onRequestAnAccountClose = (): void => {
     toggleRequestAnAccountModal(false);
   };
 
-  const onLoginSubmit = (credentials: FormData): void => {
-    login(credentials);
+  // login form submit
+  const onLoginSubmit = async (credentials: FormData): Promise<void> => {
+    const { data, error } = await login(credentials);
+    if (error || !data || data === null) {
+      setLoginErrors(true);
+      return;
+    }
+    setLoginResult(data);
+    if (setAuthenticated && setToken) {
+      setAuthenticated(true);
+      setToken(data.login.token);
+    }
   };
 
   return (
@@ -113,19 +123,26 @@ export const Login: React.FC<PropTypes> = () => {
               {errors.password.message}
             </Text>
           )}
+          {/* TODO: @chirag to map below error to urql error message */}
+          {loginErrors && (
+            <Text id="submitError" variant="inputError">
+              Invalid email or password
+            </Text>
+          )}
         </Box>
         <Box variant="inputWrap">
-          <Button variant="primary" type="submit">
+          <Button variant={EnumButtonVariants.PRIMARY} type="submit" disabled={fetching}>
             Sign in
-            {fetching && <Spinner variant="buttonLoaderPrimary" />}
+            {fetching && <Spinner variant={CustomVariants.BUTTON_LOADER_PRIMARY} />}
           </Button>
         </Box>
         <Text sx={{ color: 'textLight', fontSize: 1 }}>
           Don't have an Account ?{' '}
-          <Button variant="link" type="button" onClick={onRequestAnAccountOpen}>
+          <Button variant={EnumButtonVariants.LINK} type="button" onClick={onRequestAnAccountOpen}>
             Request an account
           </Button>
         </Text>
+        <pre>{JSON.stringify(loginResult, null, 2)}</pre>
       </form>
       <Modal visible={openRequestAnAccount} title="Request an Account" onClose={onRequestAnAccountClose}>
         <Box pb={10}>

@@ -1,4 +1,4 @@
-export enum EnumVariants {
+export enum CustomVariants {
   'FOOTER' = 'footer',
   'DASHBOARD_LIST_ITEM' = 'dashboardListItem',
   'INPUT_WRAP' = 'inputWrap',
@@ -11,9 +11,9 @@ export enum EnumVariants {
   'MODAL_BODY' = 'modalBody',
 }
 
-export type IVariants = Record<EnumVariants, any>;
+export type IVariants = Record<CustomVariants, any>;
 
-const Variants: IVariants = {
+export const Variants: IVariants = {
   footer: {
     color: 'muted',
     pt: 29,
@@ -94,5 +94,3 @@ const Variants: IVariants = {
     width: 435,
   },
 };
-
-export default Variants;

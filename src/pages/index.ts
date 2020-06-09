@@ -4,4 +4,4 @@ import Brands from './brands';
 import Users from './users';
 import Login from './pages.login';
 
-export default { NotFound, Login, Home, Brands, Users };
+export { NotFound, Login, Home, Brands, Users };

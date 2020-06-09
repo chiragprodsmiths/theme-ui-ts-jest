@@ -54,7 +54,7 @@ const webPackConfig: webpack.Configuration | webpackDevServer.Configuration = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: 4000,
     hot: true,
     historyApiFallback: true,
     disableHostCheck: true,

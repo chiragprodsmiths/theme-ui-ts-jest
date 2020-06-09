@@ -21,6 +21,7 @@
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet"
   },
   "dependencies": {
+    "@rehooks/local-storage": "^2.4.0",
     "@types/yup": "^0.29.2",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
