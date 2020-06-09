@@ -23,8 +23,10 @@ const PublicRoute: React.FC<ProtectedRouteProps> = (props: ProtectedRouteProps) 
   const { authenticated } = useContext(AuthContext);
   const { pathname, search } = useLocation();
 
+  // if not authenticated redirect to login
   if (!authenticated) return <Navigate to="/login" replace state={{ redirect: `${pathname}${search}` }} />;
 
+  // else render route
   return <AppLayout>{props.element}</AppLayout>;
 };
 

@@ -4,11 +4,11 @@ import * as React from 'react';
 import { Box, Input, Label, Text } from 'theme-ui';
 import Select from 'components/select';
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
+// const options = [
+//   { value: 'chocolate', label: 'Chocolate' },
+//   { value: 'strawberry', label: 'Strawberry' },
+//   { value: 'vanilla', label: 'Vanilla' },
+// ];
 
 type PropTypes = {};
 
@@ -45,10 +45,12 @@ const AllComponents: React.FC<PropTypes> = () => {
         </Text>
       </Box>
       <Box variant="inputWrap">
-        <Select options={options} placeholder="Select option" />
+        {/* <Select options={options} placeholder="Select option" /> */}
+        <Select />
       </Box>
       <Box variant="inputWrap">
-        <Select options={options} placeholder="Select with error" error />
+        {/* <Select options={options} placeholder="Select with error" error /> */}
+        <Select />
         <Text id="inputErrorError" variant="inputError">
           Error Message
         </Text>

@@ -3,11 +3,11 @@ import Select from 'components/select';
 import { Button, Textarea, IconButton, Text, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
 import OverflowIcon from 'components/icons/icon.overflow';
 
-const options = [
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-];
+// const options = [
+//   { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
+//   { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
+//   { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
+// ];
 
 type PropTypes = {};
 
@@ -190,10 +190,12 @@ const AddBrand: React.FC<PropTypes> = () => {
             <Box px="12" pt="10" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
               <Grid gap={10} columns={[2, null, 3]}>
                 <Box variant="inputWrap">
-                  <Select options={options} placeholder="Select brand" />
+                  {/* <Select options={options} placeholder="Select brand" /> */}
+                  <Select />
                 </Box>
                 <Box variant="inputWrap">
-                  <Select options={options} placeholder="Parent Company" />
+                  {/* <Select options={options} placeholder="Parent Company" /> */}
+                  <Select />
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
