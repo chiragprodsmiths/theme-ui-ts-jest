@@ -10,6 +10,7 @@ import Styles from './theme.styles';
 import Shadows from './theme.shadows';
 import Space from './theme.spaces';
 import TextVariants from './theme.variants.text';
+import TextareaVariants from './theme.variants.textarea';
 import Typography from './theme.typography';
 import { Variants } from './theme.variants';
 
@@ -23,6 +24,7 @@ export const theme = {
   fontWeights: Typography.fontWeights,
   forms: {
     ...InputVariants,
+    ...TextareaVariants,
   },
   images: ImagesVariants,
   lineHeights: Typography.lineHeights,

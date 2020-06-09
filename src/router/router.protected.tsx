@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from 'components/auth/auth.provider';
 import AppLayout from 'components/layout/layout.app';
 import Home from 'pages/pages.home';
+import AllComponents from 'pages/pages.components';
 import BrandRouter from './router.brand';
 
 type PropTypes = {};
@@ -32,6 +33,7 @@ const ProtectedRouter: React.FC<PropTypes> = () => {
     <Routes>
       <Route path="/" element={<PublicRoute element={<Home />} />} />
       <Route path="brands/*" element={<PublicRoute element={<BrandRouter />} />} />
+      <Route path="components" element={<AllComponents />} />
     </Routes>
   );
 };

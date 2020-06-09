@@ -15,7 +15,7 @@ const BrandRouter: React.FC<PropTypes> = () => {
     <BrandsLayout>
       <Routes>
         <Route path="/" element={<BrandPages.Brands />} />
-        <Route path="add-new-brand" element={<BrandPages.AddBrand />} />
+        <Route path="add" element={<BrandPages.AddBrand />} />
         <Route path=":slug" element={<BrandPages.EditBrand />} />
       </Routes>
     </BrandsLayout>

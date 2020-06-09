@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 /**
  * Theme UI Components
  */
-import { IconButton, Container, Flex, Image, Box, Text, Heading, Link } from 'theme-ui';
+import { Link, Card, IconButton, Container, Flex, Image, Box, Text, Heading } from 'theme-ui';
 /**
  * Custom Components
  */
@@ -27,6 +27,12 @@ type PropTypes = {
  * used for protected app pages
  */
 const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
+  const [openBrandList, toggleBrandList] = useState<boolean>(false);
+
+  const onClickBrand = (): void => {
+    toggleBrandList(!openBrandList);
+  };
+
   return (
     <>
       <header>
@@ -67,12 +73,26 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
           </Box>
           <Box sx={{ width: '30%', textAlign: 'right' }}>
             <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-              <Box>
-                <IconButton>
+              <Box sx={{ position: 'relative' }}>
+                <IconButton onClick={onClickBrand}>
                   <BrandIcon sx={{ mr: 2 }} />
                   Brand
                   <ChevronDown sx={{ ml: 2 }} />
                 </IconButton>
+                <Card variant="popover" sx={{ display: openBrandList ? 'block' : 'none' }}>
+                  <Link variant="popoverListItem" href="/">
+                    Deutsche Telekom
+                  </Link>
+                  <Link variant="popoverListItemActive" href="/">
+                    Bayerische Motoren Werke
+                  </Link>
+                  <Link variant="popoverListItem" href="/">
+                    Bosch
+                  </Link>
+                  <Link variant="popoverListItem" href="/">
+                    Sparkassen-Finanzgruppe
+                  </Link>
+                </Card>
               </Box>
               <Box>
                 <Flex>

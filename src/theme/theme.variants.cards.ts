@@ -23,7 +23,7 @@ const CardsVariants: ICardsVariants = {
     background: 'white',
     textAlign: 'left',
     minWidth: 272,
-    mt: 3,
+    mt: 2,
     boxShadow: 'buttonOutlineShadow',
     padding: 0,
     zIndex: 1,
