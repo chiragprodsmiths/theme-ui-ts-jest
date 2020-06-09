@@ -1,13 +1,15 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Text, Card, Heading } from 'theme-ui';
 import DashboardBadge from './dashboard.badge';
 
 type PropTypes = {
   active?: boolean;
-  title?: string;
-  value?: number;
-  badgeValue?: number;
-  status?: string;
+  title: string;
+  value: number;
+  badgeValue: number;
+  status: string;
+  to: string;
 };
 
 /**
@@ -15,15 +17,22 @@ type PropTypes = {
  */
 const DashboardCard: React.FC<PropTypes> = (props) => {
   return (
-    <Card variant="dashboardTab" sx={{ opacity: props.active ? 1 : 0.5 }}>
-      <DashboardBadge value={props.badgeValue} />
-      <Heading as="h4">{props.title}</Heading>
-      <Text sx={{ fontSize: 7, fontFamily: 'light' }}>{props.value}</Text>
-      <Text color="textLight">{props.status}</Text>
-    </Card>
+    <Link to={props.active ? props.to : '/'}>
+      <Card variant={props.active ? 'dashboardTab' : 'dashboardTabActive'}>
+        <DashboardBadge value={props.badgeValue} />
+        <Heading as="h4">{props.title}</Heading>
+        <Text as="p" sx={{ fontSize: 7, fontFamily: 'light' }}>
+          {props.value}
+        </Text>
+        <Text color="textLight">{props.status}</Text>
+      </Card>
+    </Link>
   );
 };
 
-DashboardCard.defaultProps = {};
+DashboardCard.defaultProps = {
+  active: false,
+  to: '/',
+};
 
 export default DashboardCard;

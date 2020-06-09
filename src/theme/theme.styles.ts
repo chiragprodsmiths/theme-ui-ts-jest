@@ -10,6 +10,7 @@ const Styles = {
     WebkitFontSmoothing: 'antialiased',
     p: {
       fontFamily: 'regular',
+      color: 'text',
     },
     input: {
       fontFamily: 'regular',
@@ -19,21 +20,27 @@ const Styles = {
     },
     h1: {
       fontSize: 5,
+      color: 'text',
     },
     h2: {
       fontSize: 4,
+      color: 'text',
     },
     h3: {
       fontSize: 3,
+      color: 'text',
     },
     h4: {
       fontSize: 2,
+      color: 'text',
     },
     h5: {
       fontSize: 1,
+      color: 'text',
     },
     h6: {
       fontSize: 0,
+      color: 'text',
     },
     button: {
       fontFamily: 'regular',
@@ -43,6 +50,9 @@ const Styles = {
       '&:focus': {
         outline: 'none',
       },
+    },
+    div: {
+      color: 'text',
     },
     a: {
       fontFamily: 'regular',
