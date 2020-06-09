@@ -64,6 +64,7 @@ const Styles = {
     },
     form: {
       width: '100%',
+      mb: 0,
     },
   },
 };

@@ -1,13 +1,19 @@
 import * as React from 'react';
-import Select from 'components/select';
-import { Button, Textarea, IconButton, Text, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
+/**
+ * Theme UI Components
+ */
+import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
+/**
+ * Components
+ */
 import OverflowIcon from 'components/icons/icon.overflow';
-
-const options = [
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-  { value: 'Lorem Ipsum', label: 'Lorem Ipsum' },
-];
+import ManageUsersForm from 'components/brands/manageUsers';
+/**
+ * Variants
+ */
+import { CustomVariants } from 'theme/theme.variants';
+import { EnumLinksVariants } from 'theme/theme.variants.links';
+import { EnumCardsVariants } from 'theme/theme.variants.cards';
 
 type PropTypes = {};
 
@@ -17,75 +23,63 @@ type PropTypes = {};
 const AddBrand: React.FC<PropTypes> = () => {
   return (
     <>
-      <Grid gap={3} columns={[2, '2fr 8fr']}>
+      <Grid gap={4} columns={[2, '2fr 8fr']}>
+        {/* Left Sidebar */}
         <Box>
           <Card mt="5">
             <Box>
-              <Link variant="sidebarActive" href="/">
-                Update Details
+              <Link variant={EnumLinksVariants.SIDEBAR_ACTIVE} href="/">
+                Manage Brands
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Update People
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Manage Brand User
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Update Parameters
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Manage Customer User
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Manage Documents
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Manage Master Files
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Manage Credit line
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Schedule Processes
               </Link>
             </Box>
           </Card>
+          {/* Review Links */}
           <Card mt="15">
             <Box>
               <Text sx={{ lineHeight: '40px', color: 'textLight' }}>Review</Text>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Sub-Company List
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Brand Update History
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Offers List
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Users Update History
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Deliveries List
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Master Files Update History
               </Link>
             </Box>
             <Box>
-              <Link variant="sidebar" href="/">
-                Active Contracts
-              </Link>
-            </Box>
-            <Box>
-              <Link variant="sidebar" href="/">
-                Lists
-              </Link>
-            </Box>
-            <Box>
-              <Link variant="sidebar" href="/">
-                Closure List
-              </Link>
-            </Box>
-            <Box>
-              <Link variant="sidebar" href="/">
-                Archived List
+              <Link variant={EnumLinksVariants.SIDEBAR} href="/">
+                Process History
               </Link>
             </Box>
           </Card>
+          {/* Notes Section */}
           <Card mt="8">
             <Text sx={{ fontSize: 3, color: 'textLight' }}>Notes</Text>
             <Textarea rows={3} mt="3" />
@@ -95,13 +89,8 @@ const AddBrand: React.FC<PropTypes> = () => {
           </Card>
         </Box>
         <Box>
-          <Card
-            bg="white"
-            sx={{
-              borderRadius: 'default',
-              border: '1px solid',
-              borderColor: 'border',
-            }}>
+          {/* Overview Section */}
+          <Card variant={EnumCardsVariants.COLLAPSE}>
             <Flex
               sx={{
                 justifyContent: 'space-between',
@@ -167,39 +156,27 @@ const AddBrand: React.FC<PropTypes> = () => {
               </Box>
             </Flex>
           </Card>
-          <Card
-            bg="white"
-            sx={{
-              borderRadius: 'default',
-              border: '1px solid',
-              borderColor: 'border',
-              mt: 8,
-            }}>
-            <Flex
-              sx={{
-                justifyContent: 'space-between',
-                borderBottom: '1px solid',
-                borderColor: 'border',
-                px: 6,
-                py: 4,
-              }}>
-              <Box>
-                <Text sx={{ fontSize: 3, fontFamily: 'IBMPlexSansMedium' }}>Update Details</Text>
-              </Box>
+          {/* Manage Users */}
+          <Card variant={EnumCardsVariants.COLLAPSE}>
+            {/* collapse title */}
+            <Flex variant={CustomVariants.COLLAPSE_HEADER}>
+              <Heading as="h3">Manage Users</Heading>
             </Flex>
-            <Box px="12" pt="10" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
+            {/* collapse body / sections */}
+            <ManageUsersForm />
+            {/* <Box variant={CustomVariants.COLLAPSE_SECTION}>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Select options={options} placeholder="Select brand" />
                 </Box>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Select options={options} placeholder="Parent Company" />
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="customerName"
                     name="Customer Name"
                     placeholder="Customer Name"
@@ -211,9 +188,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="language"
                     name="language"
                     placeholder="language"
@@ -223,9 +200,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                   />
                   <Label htmlFor="language">Language</Label>
                 </Box>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="currency"
                     name="currency"
                     placeholder="currency"
@@ -237,9 +214,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="orgEmail"
                     type="email"
                     name="orgEmail"
@@ -252,9 +229,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
                 <Box variant="">
                   <Grid gap={10} columns={[2, '7fr 3fr']}>
-                    <Box variant="inputWrap">
+                    <Box variant={CustomVariants.INPUT_WRAP}>
                       <Input
-                        variant="input"
+                        variant={EnumInputVariants.INPUT}
                         id="phone"
                         name="phone"
                         placeholder="Phone"
@@ -264,9 +241,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                       />
                       <Label htmlFor="phone">Phone</Label>
                     </Box>
-                    <Box variant="inputWrap">
+                    <Box variant={CustomVariants.INPUT_WRAP}>
                       <Input
-                        variant="input"
+                        variant={EnumInputVariants.INPUT}
                         id="ext"
                         name="userName"
                         placeholder="Ext"
@@ -280,9 +257,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="fax"
                     name="userName"
                     placeholder="Fax"
@@ -294,14 +271,14 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
             </Box>
-            <Box px="12" pt="10" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
+            <Box variant={CustomVariants.COLLAPSE_SECTION}>
               <Text mb="6" sx={{ fontWeight: 'medium' }}>
                 Address
               </Text>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="to"
                     name="userName"
                     placeholder="To"
@@ -311,9 +288,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                   />
                   <Label htmlFor="to">To</Label>
                 </Box>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="street"
                     name="street"
                     placeholder="Street"
@@ -325,9 +302,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="city"
                     name="city"
                     placeholder="City"
@@ -337,9 +314,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                   />
                   <Label htmlFor="city">City</Label>
                 </Box>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="country"
                     name="country"
                     placeholder="Country"
@@ -351,9 +328,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                 </Box>
               </Grid>
               <Grid gap={10} columns={[2, null, 3]}>
-                <Box variant="inputWrap">
+                <Box variant={CustomVariants.INPUT_WRAP}>
                   <Input
-                    variant="input"
+                    variant={EnumInputVariants.INPUT}
                     id="zip"
                     type="zip"
                     name="zip"
@@ -365,7 +342,7 @@ const AddBrand: React.FC<PropTypes> = () => {
                   <Label htmlFor="zip">Zip</Label>
                 </Box>
               </Grid>
-            </Box>
+            </Box> */}
           </Card>
         </Box>
       </Grid>
