@@ -34,7 +34,7 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
   };
 
   return (
-    <>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header>
         <Container px={8} bg="white" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
           <Flex
@@ -63,67 +63,72 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
             </Box>
           </Flex>
         </Container>
+        {/* <SUBHEADER /> */}
+        <Container px={8} bg="subHeader" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
+          <Flex sx={{ alignItems: 'center', py: 4 }}>
+            <Box sx={{ width: '70%' }}>
+              <Heading as="h4" sx={{ color: 'textLight' }}>
+                Dashboards
+              </Heading>
+            </Box>
+            <Box sx={{ width: '30%', textAlign: 'right' }}>
+              <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box sx={{ position: 'relative' }}>
+                  <IconButton onClick={onClickBrand}>
+                    <BrandIcon sx={{ mr: 2 }} />
+                    Brand
+                    <ChevronDown sx={{ ml: 2 }} />
+                  </IconButton>
+                  <Card variant="popover" sx={{ display: openBrandList ? 'block' : 'none' }}>
+                    <Link variant="popoverListItem" href="/">
+                      Deutsche Telekom
+                    </Link>
+                    <Link variant="popoverListItemActive" href="/">
+                      Bayerische Motoren Werke
+                    </Link>
+                    <Link variant="popoverListItem" href="/">
+                      Bosch
+                    </Link>
+                    <Link variant="popoverListItem" href="/">
+                      Sparkassen-Finanzgruppe
+                    </Link>
+                  </Card>
+                </Box>
+                <Box>
+                  <Flex>
+                    <Link href="/docs" sx={{ pr: 9 }}>
+                      <IconButton variant="iconLink">
+                        <DocumentIcon sx={{ mr: 2 }} /> Docs
+                      </IconButton>
+                    </Link>
+                    <Link href="/report">
+                      <IconButton variant="iconLink">
+                        <ReportIcon sx={{ mr: 2 }} /> Report
+                      </IconButton>
+                    </Link>
+                  </Flex>
+                </Box>
+              </Flex>
+            </Box>
+          </Flex>
+        </Container>
       </header>
-      <Container px={8} bg="subHeader" sx={{ borderBottom: '1px solid', borderColor: 'border' }}>
-        <Flex sx={{ alignItems: 'center', py: 4 }}>
-          <Box sx={{ width: '70%' }}>
-            <Heading as="h4" sx={{ color: 'textLight' }}>
-              Dashboards
-            </Heading>
-          </Box>
-          <Box sx={{ width: '30%', textAlign: 'right' }}>
-            <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-              <Box sx={{ position: 'relative' }}>
-                <IconButton onClick={onClickBrand}>
-                  <BrandIcon sx={{ mr: 2 }} />
-                  Brand
-                  <ChevronDown sx={{ ml: 2 }} />
-                </IconButton>
-                <Card variant="popover" sx={{ display: openBrandList ? 'block' : 'none' }}>
-                  <Link variant="popoverListItem" href="/">
-                    Deutsche Telekom
-                  </Link>
-                  <Link variant="popoverListItemActive" href="/">
-                    Bayerische Motoren Werke
-                  </Link>
-                  <Link variant="popoverListItem" href="/">
-                    Bosch
-                  </Link>
-                  <Link variant="popoverListItem" href="/">
-                    Sparkassen-Finanzgruppe
-                  </Link>
-                </Card>
-              </Box>
-              <Box>
-                <Flex>
-                  <Link href="/docs" sx={{ pr: 9 }}>
-                    <IconButton variant="iconLink">
-                      <DocumentIcon sx={{ mr: 2 }} /> Docs
-                    </IconButton>
-                  </Link>
-                  <Link href="/report">
-                    <IconButton variant="iconLink">
-                      <ReportIcon sx={{ mr: 2 }} /> Report
-                    </IconButton>
-                  </Link>
-                </Flex>
-              </Box>
-            </Flex>
-          </Box>
-        </Flex>
-      </Container>
       {/* <BreadCrumbs /> */}
-      <main>
+      <Box
+        as="main"
+        sx={{
+          flex: '1 1 auto',
+        }}>
         <Container px={8} py={8}>
           {props.children}
         </Container>
-      </main>
+      </Box>
       <footer>
         <Flex variant="footer">
           <Text>© 2020 FleetManagement | Send feedback</Text>
         </Flex>
       </footer>
-    </>
+    </Box>
   );
 };
 
