@@ -207,7 +207,7 @@ const AddBrand: React.FC<PropTypes> = () => {
                   <IconButton>
                     <Checkmark sx={{ mr: 4 }} />
                   </IconButton>
-                  Manage Users
+                  Manage Brands
                 </Heading>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
