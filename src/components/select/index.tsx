@@ -7,7 +7,6 @@ import { Flex, Text } from 'theme-ui';
 import Colors from 'theme/theme.colors'; // TODO: @ankit use theme ui hook useTheme
 
 const ValueContainer: React.FC<CommonProps<any>> = (props) => {
-  console.log('select props', props);
   const defaultLabel =
     props.hasValue || props.selectProps.menuIsOpen ? 'selectPlaceholderHasValue' : 'selectPlaceholder';
   const errorLabel = props.hasValue ? 'selectPlaceholderHasValueError' : 'selectPlaceholderError';
@@ -99,8 +98,10 @@ const CustomStyles = (error: boolean) => {
 };
 
 type PropTypes = {
-  error: boolean;
+  error?: boolean;
   placeholder?: string;
+  id: string;
+  name: string;
   options: any[];
 };
 
