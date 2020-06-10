@@ -98,10 +98,9 @@ const CustomStyles = (error: boolean) => {
 };
 
 type PropTypes = {
-  error?: boolean;
+  error: boolean;
   placeholder?: string;
   id: string;
-  name: string;
   options: any[];
 };
 

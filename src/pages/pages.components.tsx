@@ -2,13 +2,6 @@ import * as React from 'react';
 
 // theme ui
 import { Box, Input, Label, Text } from 'theme-ui';
-import Select from 'components/select';
-
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
 
 type PropTypes = {};
 
@@ -40,15 +33,6 @@ const AllComponents: React.FC<PropTypes> = () => {
           autoFocus
         />
         <Label htmlFor="inputError">Input With Error</Label>
-        <Text id="inputErrorError" variant="inputError">
-          Error Message
-        </Text>
-      </Box>
-      <Box variant="inputWrap">
-        <Select options={options} placeholder="Select option" error={false} />
-      </Box>
-      <Box variant="inputWrap">
-        <Select options={options} placeholder="Select with error" error />
         <Text id="inputErrorError" variant="inputError">
           Error Message
         </Text>
