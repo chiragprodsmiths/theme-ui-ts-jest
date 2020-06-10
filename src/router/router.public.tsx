@@ -1,13 +1,10 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 /**
  * app components
  */
 import { AuthContext } from 'components/auth/auth.provider';
-import PublicLayout from 'components/layout/layout.public';
-import Login from 'pages/pages.login';
-import NotFound from 'pages/pages.404';
-import { PublicRouteProps, LocationState, RouterProps } from './router.types';
+import { PublicRouteProps, LocationState } from './router.types';
 
 /**
  * Router
@@ -32,18 +29,7 @@ const PublicRoute: React.FC<PublicRouteProps> = (props: PublicRouteProps) => {
   }
 
   // if not authenticated return public route
-  return <PublicLayout>{props.element}</PublicLayout>;
+  return <>{props.element}</>;
 };
 
-const PublicRouter: React.FC<RouterProps> = () => {
-  const { authenticated } = useContext(AuthContext);
-  return (
-    <Routes>
-      <Route path="login" element={<PublicRoute element={<Login />} />} />
-      <Route path="signup" element={<PublicRoute element={<Login />} />} />
-      {!authenticated && <Route path="*" element={<NotFound />} />}
-    </Routes>
-  );
-};
-
-export default PublicRouter;
+export default PublicRoute;

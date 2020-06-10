@@ -23,7 +23,7 @@ export const BreadCrumb: React.FC<PropTypes> = (props: PropTypes) => {
     <>
       {!props.root && (
         <span>
-          <Link to="/">Home</Link> {' > '}
+          <Link to="/">Dashboard</Link> {' > '}
         </span>
       )}
       {props.fragments.map((fragment: Fragment, index: number) => {
