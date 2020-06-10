@@ -6,6 +6,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from 'components/auth/auth.provider';
 import PublicLayout from 'components/layout/layout.public';
 import Login from 'pages/pages.login';
+import NotFound from 'pages/pages.404';
 import { PublicRouteProps, LocationState, RouterProps } from './router.types';
 
 /**
@@ -35,10 +36,12 @@ const PublicRoute: React.FC<PublicRouteProps> = (props: PublicRouteProps) => {
 };
 
 const PublicRouter: React.FC<RouterProps> = () => {
+  const { authenticated } = useContext(AuthContext);
   return (
     <Routes>
       <Route path="login" element={<PublicRoute element={<Login />} />} />
       <Route path="signup" element={<PublicRoute element={<Login />} />} />
+      {!authenticated && <Route path="*" element={<NotFound />} />}
     </Routes>
   );
 };

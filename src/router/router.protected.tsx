@@ -4,6 +4,7 @@ import { AuthContext } from 'components/auth/auth.provider';
 import AppLayout from 'components/layout/layout.app';
 import Home from 'pages/pages.home';
 import AllComponents from 'pages/pages.components';
+import NotFound from 'pages/pages.404';
 import BrandRouter from './router.brand';
 
 type PropTypes = {};
@@ -31,11 +32,13 @@ const PublicRoute: React.FC<ProtectedRouteProps> = (props: ProtectedRouteProps) 
 };
 
 const ProtectedRouter: React.FC<PropTypes> = () => {
+  const { authenticated } = useContext(AuthContext);
   return (
     <Routes>
       <Route path="/" element={<PublicRoute element={<Home />} />} />
       <Route path="brands/*" element={<PublicRoute element={<BrandRouter />} />} />
       <Route path="components" element={<AllComponents />} />
+      {authenticated && <Route path="*" element={<NotFound />} />}
     </Routes>
   );
 };
