@@ -33,3 +33,7 @@ export enum TimeZoneErrorMessages {
 export enum UnitsErrorMessages {
   REQUIRED = 'Please Select units',
 }
+
+export enum FleetManagementFMCErrorMessages {
+  NUMBER = 'Please enter numbers only',
+}

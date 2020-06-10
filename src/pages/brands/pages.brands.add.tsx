@@ -161,7 +161,7 @@ const AddBrand: React.FC<PropTypes> = () => {
           <Card variant={EnumCardsVariants.COLLAPSE}>
             {/* collapse title */}
             <Flex variant={CustomVariants.COLLAPSE_HEADER}>
-              <Heading as="h3">Manage Users</Heading>
+              <Heading as="h3">Manage Brands</Heading>
             </Flex>
             {/* Add Brand Form */}
             <AddBrandForm />
