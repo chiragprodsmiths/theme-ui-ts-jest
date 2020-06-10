@@ -51,6 +51,7 @@ const InputVariants: IInputVariants = {
     },
     '&:focus + label': {
       transform: 'translate(0, -9.5px)',
+      top: '2px',
       px: '2px',
       fontSize: 1,
       color: 'link',
@@ -90,9 +91,21 @@ const InputVariants: IInputVariants = {
       opacity: 0,
       transition: 'inherit',
     },
+    '&:-internal-autofill-selected': {
+      boxShadow: '0 0 0px 1000px white inset',
+    },
+    '&:-webkit-autofill': {
+      '&:first-line': {
+        font: '400 16px IBMPlexSansRegular',
+        lineHeight: 1.4,
+      },
+      '&:focus': {
+        boxShadow: '0 0 0px 1000px white inset',
+      },
+    },
     '& + label': {
       position: 'absolute',
-      top: 0,
+      top: '2px',
       left: 4,
       display: 'inline-flex',
       width: 'auto',
@@ -103,13 +116,13 @@ const InputVariants: IInputVariants = {
       transform: 'translate(0, 12px)',
     },
     '&:focus + label': {
-      transform: 'translate(0, -8px)',
+      transform: 'translate(0, -9.5px)',
       px: '2px',
       fontSize: 1,
       color: 'error',
     },
     '&:not(:placeholder-shown) + label': {
-      transform: 'translate(0, -8px)',
+      transform: 'translate(0, -9.5px)',
       px: '2px',
       fontSize: 1,
       color: 'error',
