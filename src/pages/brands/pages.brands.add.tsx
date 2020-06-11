@@ -144,7 +144,7 @@ const AddBrand: React.FC<PropTypes> = () => {
               }}>
               <Box>
                 <Text color="primary" sx={{ fontSize: 3 }}>
-                  Customer ID 198433
+                  Brand ID: 198433
                 </Text>
               </Box>
               <Box>
@@ -153,7 +153,9 @@ const AddBrand: React.FC<PropTypes> = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                  <Text sx={{ fontSize: 1, lineHeight: '18px' }}>Last modified : Fabrizio, 14 Feb 2020</Text>
+                  <Text sx={{ fontSize: 1, lineHeight: '18px' }}>
+                    Last modified : Ankit{/* Username */} , 14 Feb 2020{/* Date */}
+                  </Text>
                   <IconButton>
                     <OverflowIcon sx={{ ml: 4 }} />
                   </IconButton>
@@ -167,34 +169,39 @@ const AddBrand: React.FC<PropTypes> = () => {
                 lineHeight: 'normal',
               }}>
               <Box>
-                <Text>Dramation Anthrologics, Zurich, CH </Text>
-                <Text>Raymond Schwarz (Logistics & Services Manager) </Text>
-                <Text>fleetmanager@dramationathro.com | +41 24322 42324</Text>
+                <Text>
+                  {/* Brand Name */}
+                  Dramation Anthrologics, {/* City */}
+                  Zurich, {/* Country */}
+                  CH
+                </Text>
+                <Text>1st branduser_name</Text>
+                <Text>
+                  {/* user_email */} ankit@arthify.com | {/* user_mobile */} +91 24322 42324
+                </Text>
               </Box>
               <Box pl="15">
                 <Text as="span">
-                  Sub-Customer :{' '}
+                  Brand Users :{' '}
                   <Text as="span" sx={{ color: 'link' }}>
                     3
                   </Text>
                 </Text>
                 <Text>
-                  Cost-Centers :{' '}
+                  Customers :{' '}
                   <Text as="span" sx={{ color: 'link' }}>
                     2
                   </Text>
                 </Text>
                 <Text>
-                  Drivers :{' '}
+                  Customers Users :{' '}
                   <Text as="span" sx={{ color: 'link' }}>
                     18
                   </Text>
                 </Text>
               </Box>
               <Box pl="15">
-                <Text>Mercedes-Benz C-Class 20 </Text>
-                <Text>120,000kms / 36 months </Text>
-                <Text>TCO: $892p.m.</Text>
+                <Text>Active Controcts: 13</Text>
               </Box>
             </Flex>
           </Card>
