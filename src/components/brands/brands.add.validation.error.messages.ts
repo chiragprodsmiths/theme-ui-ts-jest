@@ -34,14 +34,11 @@ export enum UnitsErrorMessages {
   REQUIRED = 'Please Select units',
 }
 
-export enum DecimalNumbersOnly {
-  MATCH = 'Please enter numeric value not more than 2 decimal',
+export enum ServiceParametersMessage {
+  DECIMAL = 'Please enter numeric value not more than 2 decimal',
 }
 
-export enum NumbersOnly {
-  MATCH = 'Please enter numeric value not more than 2 decimal',
-}
-
-export enum PercentageOnly {
-  MATCH = 'Percentage should be 0-100',
+export enum MarginsAndDiscountsParametersMessage {
+  NUMBERS = 'Please enter numeric value not more than 2 decimal',
+  PERCENTAGE = 'Percentage should be 0 - 100',
 }

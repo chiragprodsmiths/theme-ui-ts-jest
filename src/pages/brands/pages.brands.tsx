@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Flex, Box, Text, Input, Button } from 'theme-ui';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 type PropTypes = {};
 
@@ -61,9 +61,7 @@ const Brands: React.FC<PropTypes> = () => {
         </Box>
         <Box>
           {/* TODO: @chirag component will come from brands page */}
-          <Button as={Link} to="/brands/add">
-            New Brand
-          </Button>
+          <Button>New Brand</Button>
         </Box>
       </Flex>
       <Flex mt="5" sx={{ justifyContent: 'flex-end' }}>
