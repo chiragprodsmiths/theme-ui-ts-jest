@@ -27,97 +27,331 @@ export const validationSchema = yup
         fleetManagement: yup
           .object<ServiceParametersValues>({
             fmc: yup
-              .number()
-              .transform((value) => (Number.isNaN(value) ? null : value))
+              .string()
               .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
               .defined(),
-            partner: yup.number().nullable().defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         maintenanceRepairs: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         tireManagement: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         fuelManagement: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         insurance: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         remarketing: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         damageManagement: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         onlineReporting: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         breakdownAssist: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         replacementCar: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         warrantyExt: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         leasing: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
         smr: yup
           .object<ServiceParametersValues>({
-            fmc: yup.number().nullable().defined(),
-            partner: yup.number().nullable().defined(),
+            fmc: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
+            partner: yup
+              .string()
+              .nullable()
+              .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+                message: ErrorMessages.DecimalNumbersOnly.MATCH,
+                excludeEmptyString: true,
+              })
+              .defined(),
           })
           .defined(),
       })
       .defined(),
     margins: yup
       .object<Margins>({
-        smr: yup.number().nullable().defined(),
-        smrDiscount: yup.number().nullable().defined(),
-        insurance: yup.number().nullable().defined(),
-        leasing: yup.number().nullable().defined(),
-        tire: yup.number().nullable().defined(),
-        tireDiscount: yup.number().nullable().defined(),
-        fuel: yup.number().nullable().defined(),
-        km: yup.number().nullable().defined(),
+        smr: yup
+          .string()
+          .nullable()
+          .matches(/^(100|[1-9]?[0-9])$/, {
+            message: ErrorMessages.PercentageOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        smrDiscount: yup
+          .string()
+          .nullable()
+          .matches(/^(100|[1-9]?[0-9])$/, {
+            message: ErrorMessages.PercentageOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        insurance: yup
+          .string()
+          .nullable()
+          .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+            message: ErrorMessages.DecimalNumbersOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        leasing: yup
+          .string()
+          .nullable()
+          .matches(/^(100|[1-9]?[0-9])$/, {
+            message: ErrorMessages.PercentageOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        tire: yup
+          .string()
+          .nullable()
+          .matches(/^(100|[1-9]?[0-9])$/, {
+            message: ErrorMessages.PercentageOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        tireDiscount: yup
+          .string()
+          .nullable()
+          .matches(/^(100|[1-9]?[0-9])$/, {
+            message: ErrorMessages.PercentageOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        fuel: yup
+          .string()
+          .nullable()
+          .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+            message: ErrorMessages.DecimalNumbersOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
+        km: yup
+          .string()
+          .nullable()
+          .matches(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/, {
+            message: ErrorMessages.DecimalNumbersOnly.MATCH,
+            excludeEmptyString: true,
+          })
+          .defined(),
       })
       .defined(),
   })

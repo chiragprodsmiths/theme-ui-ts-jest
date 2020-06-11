@@ -17,8 +17,8 @@ export type BrandDetails = {
 };
 
 export type ServiceParametersValues = {
-  fmc: number | null;
-  partner: number | null;
+  fmc: string | null;
+  partner: string | null;
 };
 
 export type ServiceParameters = {
@@ -38,14 +38,14 @@ export type ServiceParameters = {
 };
 
 export type Margins = {
-  smr: number | null;
-  smrDiscount: number | null;
-  insurance: number | null;
-  leasing: number | null;
-  tire: number | null;
-  tireDiscount: number | null;
-  fuel: number | null;
-  km: number | null;
+  smr: string | null;
+  smrDiscount: string | null;
+  insurance: string | null;
+  leasing: string | null;
+  tire: string | null;
+  tireDiscount: string | null;
+  fuel: string | null;
+  km: string | null;
 };
 
 export type FormData = {
