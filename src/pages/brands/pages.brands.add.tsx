@@ -3,12 +3,14 @@ import * as React from 'react';
  * Theme UI Components
  */
 // import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link, Input, Label } from 'theme-ui';
-import { Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link } from 'theme-ui';
+import { Label, Checkbox, Button, Textarea, IconButton, Text, Heading, Flex, Box, Grid, Card, Link } from 'theme-ui';
 /**
  * Components
  */
 import OverflowIcon from 'components/icons/icon.overflow';
 import AddBrandForm from 'components/brands/brands.add';
+import ChevronDown from 'components/icons/icon.chevronDown';
+import Checkmark from 'components/icons/icon.checkmark';
 /**
  * Variants
  */
@@ -28,27 +30,30 @@ const AddBrand: React.FC<PropTypes> = () => {
         {/* Left Sidebar */}
         <Box>
           <Card mt="5">
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR_ACTIVE} href="/">
                 Manage Brands
               </Link>
+              <IconButton>
+                <Checkmark sx={{ width: 16, height: '11.04' }} />
+              </IconButton>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Manage Brand User
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Manage Customer User
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Manage Master Files
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Schedule Processes
               </Link>
@@ -56,37 +61,72 @@ const AddBrand: React.FC<PropTypes> = () => {
           </Card>
           {/* Review Links */}
           <Card mt="15">
-            <Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <Text sx={{ lineHeight: '40px', color: 'textLight' }}>Review</Text>
+              <IconButton>
+                <ChevronDown sx={{ ml: 5, width: 16, height: '9.2' }} />
+              </IconButton>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Brand Update History
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Users Update History
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Master Files Update History
               </Link>
             </Box>
-            <Box>
+            <Box sx={{ position: 'relative' }}>
               <Link variant={EnumLinksVariants.SIDEBAR} href="/">
                 Process History
               </Link>
             </Box>
           </Card>
           {/* Notes Section */}
-          <Card mt="8">
+          <Card mt="8" mb="10">
             <Text sx={{ fontSize: 3, color: 'textLight' }}>Notes</Text>
             <Textarea rows={3} mt="3" />
-            <Button mt="4" sx={{ minWidth: '112px' }}>
+            <Button mt="4" sx={{ minWidth: '112px', py: '6px' }}>
               Save
             </Button>
+          </Card>
+          <Card mb="3" px="4" py="2" bg="white" sx={{ border: '1px solid', borderColor: 'border', borderRadius: 'sm' }}>
+            <Flex sx={{ justifyContent: 'space-between' }}>
+              <Box sx={{ fontSize: 0 }}>
+                <Text sx={{ color: 'textLight', lineHeight: '16px' }}>12 Dec 2019</Text>
+                <Text sx={{ color: 'textLight', lineHeight: '16px' }}>Username</Text>
+              </Box>
+              <Box>
+                <Label>
+                  <Checkbox />
+                </Label>
+              </Box>
+            </Flex>
+            <Box mt="2" sx={{ fontSize: 1 }}>
+              Pending note related to this will show here
+            </Box>
+          </Card>
+          <Card mb="3" px="4" py="2" bg="white" sx={{ border: '1px solid', borderColor: 'border', borderRadius: 'sm' }}>
+            <Flex sx={{ justifyContent: 'space-between' }}>
+              <Box sx={{ fontSize: 0 }}>
+                <Text sx={{ color: 'textLight', lineHeight: '16px' }}>12 Dec 2019</Text>
+                <Text sx={{ color: 'textLight', lineHeight: '16px' }}>Username</Text>
+              </Box>
+              <Box>
+                <Label>
+                  <Checkbox />
+                </Label>
+              </Box>
+            </Flex>
+            <Box mt="2" sx={{ fontSize: 1 }}>
+              Pending note related to this will show here
+            </Box>
           </Card>
         </Box>
         <Box>
@@ -113,7 +153,7 @@ const AddBrand: React.FC<PropTypes> = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                  <Text sx={{ fontSize: 1 }}>Last modified : Fabrizio, 14 Feb 2020</Text>
+                  <Text sx={{ fontSize: 1, lineHeight: '18px' }}>Last modified : Fabrizio, 14 Feb 2020</Text>
                   <IconButton>
                     <OverflowIcon sx={{ ml: 4 }} />
                   </IconButton>
@@ -124,6 +164,7 @@ const AddBrand: React.FC<PropTypes> = () => {
               sx={{
                 px: 6,
                 py: 4,
+                lineHeight: 'normal',
               }}>
               <Box>
                 <Text>Dramation Anthrologics, Zurich, CH </Text>
@@ -161,7 +202,22 @@ const AddBrand: React.FC<PropTypes> = () => {
           <Card variant={EnumCardsVariants.COLLAPSE}>
             {/* collapse title */}
             <Flex variant={CustomVariants.COLLAPSE_HEADER}>
-              <Heading as="h3">Manage Brands</Heading>
+              <Box>
+                <Heading as="h3">
+                  <IconButton>
+                    <Checkmark sx={{ mr: 4 }} />
+                  </IconButton>
+                  Manage Brands
+                </Heading>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <IconButton>
+                  <OverflowIcon sx={{ ml: 4 }} />
+                </IconButton>
+                <IconButton>
+                  <ChevronDown sx={{ ml: 5, width: 20, height: '11.4' }} />
+                </IconButton>
+              </Box>
             </Flex>
             {/* Add Brand Form */}
             <AddBrandForm />

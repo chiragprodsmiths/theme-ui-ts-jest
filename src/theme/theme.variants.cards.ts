@@ -43,7 +43,7 @@ const CardsVariants: ICardsVariants = {
     borderRadius: 'default',
     border: '1px solid',
     borderColor: 'border',
-    mt: 8,
+    mb: 8,
     bg: 'white',
   },
 };

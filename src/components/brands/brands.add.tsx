@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { Grid, Button, Label, Input, Text, Heading, Box, Flex, Spinner } from 'theme-ui';
+import { IconButton, Grid, Button, Label, Input, Text, Heading, Box, Flex, Spinner } from 'theme-ui';
 import { useMutation } from 'urql';
 /**
  * app components
  */
 import Select from 'components/select';
+import AddIcon from 'components/icons/icon.add';
+import SubtractIcon from 'components/icons/icon.subtract';
 /**
  * variants
  */
@@ -351,6 +353,20 @@ const AddBrandForm: React.FC<PropTypes> = () => {
             )}
           </Box>
         </Grid>
+        <Box variant={CustomVariants.INPUT_WRAP}>
+          <IconButton>
+            <AddIcon sx={{ mr: 2 }} />{' '}
+            <Text as="span" color="link" sx={{ fontFamily: 'IBMPlexSansMedium' }}>
+              Add another Address
+            </Text>
+          </IconButton>
+          <IconButton ml="8">
+            <SubtractIcon sx={{ mr: 2 }} />
+            <Text as="span" color="link" sx={{ fontFamily: 'IBMPlexSansMedium' }}>
+              Remove
+            </Text>
+          </IconButton>
+        </Box>
       </Box>
       {/* Service Parameters */}
       <Box variant={CustomVariants.COLLAPSE_SECTION}>

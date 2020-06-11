@@ -136,6 +136,7 @@ export const Variants: IVariants = {
     borderColor: 'border',
     px: 6,
     py: 4,
+    alignItems: 'center',
   },
   collapseSection: {
     borderBottom: '1px solid',
@@ -145,6 +146,7 @@ export const Variants: IVariants = {
   },
   collapseFooter: {
     px: 12,
-    py: 10,
+    pb: 10,
+    pt: 8,
   },
 };
