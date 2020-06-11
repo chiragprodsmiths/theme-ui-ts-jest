@@ -2,6 +2,8 @@ export enum CustomVariants {
   'FOOTER' = 'footer',
   'DASHBOARD_LIST_ITEM' = 'dashboardListItem',
   'INPUT_WRAP' = 'inputWrap',
+  'INPUT_FILE_WRAP' = 'inputFileWrap',
+  'INPUT_FILE_BOX' = 'inputFileBox',
   'SIGN_IN_BG' = 'signInBg',
   'SIGN_IN_OVERLAY' = 'signInOverlay',
   'BUTTON_LOADER_PRIMARY' = 'buttonLoaderPrimary',
@@ -15,6 +17,7 @@ export enum CustomVariants {
   'COLLAPSE_HEADER' = 'collapseHeader',
   'COLLAPSE_SECTION' = 'collapseSection',
   'COLLAPSE_FOOTER' = 'collapseFooter',
+  'SELECTED_FILE_WRAP' = 'selectedFileWrap',
 }
 
 export type IVariants = Record<CustomVariants, any>;
@@ -54,6 +57,16 @@ export const Variants: IVariants = {
   inputWrap: {
     mb: 12,
     position: 'relative',
+  },
+  inputFileWrap: {
+    mt: -2,
+    mb: 12,
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  inputFileBox: {
+    position: 'relative',
+    mt: 2,
   },
   buttonLoaderPrimary: {
     position: 'absolute',
@@ -148,5 +161,10 @@ export const Variants: IVariants = {
     px: 12,
     pb: 10,
     pt: 8,
+  },
+  selectedFileWrap: {
+    position: 'absolute',
+    top: '13px',
+    left: 2,
   },
 };

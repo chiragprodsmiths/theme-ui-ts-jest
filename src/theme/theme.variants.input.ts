@@ -56,14 +56,35 @@ const InputVariants: IInputVariants = {
       fontSize: 1,
       color: 'link',
     },
-    '&:not(:placeholder-shown)': {
-      borderColor: 'link',
+    '&:not([type="file"])': {
+      '&:not(:placeholder-shown)': {
+        borderColor: 'link',
+      },
+      '&:not(:placeholder-shown) + label': {
+        transform: 'translate(0, -9.5px)',
+        px: '2px',
+        fontSize: 1,
+        color: 'link',
+      },
     },
-    '&:not(:placeholder-shown) + label': {
-      transform: 'translate(0, -9.5px)',
-      px: '2px',
-      fontSize: 1,
-      color: 'link',
+    '&[type="file"]': {
+      pl: 10000,
+      '&:placeholder-shown': {
+        display: 'none',
+        '& + label': {
+          transform: 'translate(0, -9.5px)',
+        },
+      },
+      '& + label': {
+        '& + button': {
+          position: 'absolute',
+          right: 3,
+          top: 2,
+          py: 2,
+          minWidth: 112,
+          fontSize: 1,
+        },
+      },
     },
     '&:disabled': {
       bg: 'greyShadow',

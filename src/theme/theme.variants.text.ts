@@ -7,6 +7,7 @@ export enum EnumTextVariants {
   'SELECT_PLACEHOLDER_HAS_VALUE' = 'selectPlaceholderHasValue',
   'SELECT_PLACEHOLDER_ERROR' = 'selectPlaceholderError',
   'SELECT_PLACEHOLDER_HAS_VALUE_ERROR' = 'selectPlaceholderHasValueError',
+  'SELECTED_FILE_TEXT' = 'selectedFileText',
 }
 
 const select = {
@@ -61,6 +62,13 @@ const TextVariants: ITextVariants = {
     ...select,
     color: 'error',
     transform: 'translate(0, -9.5px)',
+  },
+  selectedFileText: {
+    color: 'textLight',
+    fontSize: 2,
+    lineHeight: 'tight',
+    position: 'relative',
+    top: '-2px',
   },
 };
 
