@@ -20,9 +20,9 @@ import { CreateBrandParams, CreateBrandResponse } from './brands.add.types';
 import { validationSchema } from './brands.add.validation';
 
 const options = [
-  { value: '1', label: 'Lorem Ipsum' },
-  { value: '2', label: 'Lorem Ipsum' },
-  { value: '3', label: 'Lorem Ipsum' },
+  { value: '1', label: 'Option 1' },
+  { value: '2', label: 'Option 2' },
+  { value: '3', label: 'Option 3' },
 ];
 
 /**
@@ -177,6 +177,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               error={!!errors?.language}
               aria-invalid={errors?.language ? 'true' : 'false'}
               aria-describedby="languageError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.language && (
               <Text id="languageError" variant="inputError">
@@ -195,6 +199,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               error={!!errors?.currency}
               aria-invalid={errors?.currency ? 'true' : 'false'}
               aria-describedby="currencyError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.currency && (
               <Text id="currencyError" variant="inputError">
@@ -215,6 +223,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               control={control}
               aria-invalid={errors?.timezone ? 'true' : 'false'}
               aria-describedby="timezoneError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.timezone && (
               <Text id="timezoneError" variant="inputError">
@@ -233,6 +245,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               control={control}
               aria-invalid={errors?.units ? 'true' : 'false'}
               aria-describedby="unitsError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.units && (
               <Text id="unitsError" variant="inputError">
@@ -339,6 +355,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               error={!!errors?.city}
               aria-invalid={errors?.city ? 'true' : 'false'}
               aria-describedby="cityError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.city && (
               <Text id="cityError" variant="inputError">
@@ -357,6 +377,10 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               error={!!errors?.country}
               aria-invalid={errors?.country ? 'true' : 'false'}
               aria-describedby="countryError"
+              valueName="selected.value"
+              onChange={([selected]) => {
+                return selected.value;
+              }}
             />
             {errors?.country && (
               <Text id="countryError" variant="inputError">
