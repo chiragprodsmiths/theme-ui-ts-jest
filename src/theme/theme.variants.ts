@@ -17,7 +17,7 @@ export enum CustomVariants {
   'COLLAPSE_FOOTER' = 'collapseFooter',
 }
 
-export type IVariants = Record<CustomVariants, any>;
+export type IVariants = Record<CustomVariants, object>;
 
 export const Variants: IVariants = {
   footer: {

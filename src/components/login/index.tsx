@@ -15,8 +15,8 @@ import RequestAnAccount from 'components/request-an-account';
  */
 import fleetLogo from 'images/logo.png';
 import { loginQuery } from 'queries/queries.login';
-import { FormData, LoginResponse } from './types';
-import { validationSchema } from './validation';
+import { FormData, LoginResponse } from './login.types';
+import { validationSchema } from './login.validation';
 
 /**
  * prop types
@@ -82,7 +82,6 @@ export const Login: React.FC<PropTypes> = () => {
         </Heading>
         <Box variant="inputWrap">
           <Input
-            variant={errors.userName ? 'inputError' : 'input'}
             id="email"
             type="email"
             name="userName"
@@ -90,13 +89,14 @@ export const Login: React.FC<PropTypes> = () => {
             autoComplete="email"
             autoFocus
             ref={register}
-            aria-invalid={errors.userName ? 'true' : 'false'}
+            aria-invalid={errors?.userName ? 'true' : 'false'}
             aria-describedby="userNameError"
+            variant={errors?.userName ? 'inputError' : 'input'}
           />
           <Label htmlFor="email">Email</Label>
-          {errors.userName && (
+          {errors?.userName && (
             <Text id="userNameError" variant="inputError">
-              {errors.userName.message}
+              {errors?.userName?.message}
             </Text>
           )}
         </Box>
@@ -107,20 +107,20 @@ export const Login: React.FC<PropTypes> = () => {
         </Flex>
         <Box variant="inputWrap">
           <Input
-            variant={errors.password ? 'inputError' : 'input'}
+            variant={errors?.password ? 'inputError' : 'input'}
             id="password"
             type="password"
             name="password"
             placeholder="Password"
             autoComplete="password"
             ref={register}
-            aria-invalid={errors.password ? 'true' : 'false'}
+            aria-invalid={errors?.password ? 'true' : 'false'}
             aria-describedby="passwordError"
           />
           <Label htmlFor="password">Password</Label>
-          {errors.password && (
+          {errors?.password && (
             <Text id="passwordError" variant="inputError">
-              {errors.password.message}
+              {errors?.password?.message}
             </Text>
           )}
           {/* TODO: @chirag to map below error to urql error message */}

@@ -16,8 +16,8 @@ import { EnumInputVariants } from 'theme/theme.variants.input';
  * Queries / Types / Validation
  */
 import { addBrandMutation } from 'queries/queries.brands';
-import { FormData, AddBrandResponse } from './types';
-import { validationSchema } from './validation';
+import { FormData, AddBrandResponse } from './brands.add.types';
+import { validationSchema } from './brands.add.validation';
 
 const options = [
   { value: '1', label: 'Lorem Ipsum' },
@@ -69,8 +69,8 @@ const AddBrandForm: React.FC<PropTypes> = () => {
     watchedServiceParameters?.fuelManagement?.partner,
     watchedServiceParameters?.insurance?.fmc,
     watchedServiceParameters?.insurance?.partner,
-    watchedServiceParameters?.reMarketing?.fmc,
-    watchedServiceParameters?.reMarketing?.partner,
+    watchedServiceParameters?.remarketing?.fmc,
+    watchedServiceParameters?.remarketing?.partner,
     watchedServiceParameters?.onlineReporting?.fmc,
     watchedServiceParameters?.onlineReporting?.partner,
     watchedServiceParameters?.breakdownAssist?.fmc,
@@ -127,7 +127,7 @@ const AddBrandForm: React.FC<PropTypes> = () => {
             <Label htmlFor="details.name">Name*</Label>
             {errors?.details?.name && (
               <Text id="details.nameError" variant="inputError">
-                {errors.details.name.message}
+                {errors?.details?.name?.message}
               </Text>
             )}
           </Box>
@@ -147,32 +147,32 @@ const AddBrandForm: React.FC<PropTypes> = () => {
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
-              error={!!errors?.details?.language}
-              options={options}
               id="details.language"
               name="details.language"
               placeholder="Language*"
+              options={options}
               control={control}
+              error={!!errors?.details?.language}
             />
             {errors?.details?.language && (
               <Text id="details.languageError" variant="inputError">
-                {errors?.details?.language.message}
+                {errors?.details?.language?.message}
               </Text>
             )}
           </Box>
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
-              error={!!errors?.details?.currency}
-              options={options}
               id="details.currency"
               name="details.currency"
               placeholder="Currency*"
+              options={options}
               control={control}
+              error={!!errors?.details?.currency}
             />
             {errors?.details?.currency && (
               <Text id="details.currencyError" variant="inputError">
-                {errors?.details?.currency.message}
+                {errors?.details?.currency?.message}
               </Text>
             )}
           </Box>
@@ -181,32 +181,32 @@ const AddBrandForm: React.FC<PropTypes> = () => {
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
+              id="details.timeZone"
               error={!!errors?.details?.timeZone}
               options={options}
-              id="details.timeZone"
               name="details.timeZone"
               placeholder="Time Zone*"
               control={control}
             />
             {errors?.details?.timeZone && (
               <Text id="details.timeZoneError" variant="inputError">
-                {errors?.details?.timeZone.message}
+                {errors?.details?.timeZone?.message}
               </Text>
             )}
           </Box>
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
+              id="details.units"
               error={!!errors?.details?.units}
               options={options}
-              id="details.units"
               name="details.units"
               placeholder="Units*"
               control={control}
             />
             {errors?.details?.units && (
               <Text id="details.unitsError" variant="inputError">
-                {errors?.details?.units.message}
+                {errors?.details?.units?.message}
               </Text>
             )}
           </Box>
@@ -292,7 +292,7 @@ const AddBrandForm: React.FC<PropTypes> = () => {
             <Label htmlFor="details.streetName">Street Name*</Label>
             {errors?.details?.streetName && (
               <Text id="details.streetNameError" variant="inputError">
-                {errors?.details?.streetName.message}
+                {errors?.details?.streetName?.message}
               </Text>
             )}
           </Box>
@@ -301,32 +301,32 @@ const AddBrandForm: React.FC<PropTypes> = () => {
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
-              error={!!errors?.details?.city}
+              id="details.city"
+              name="details.city"
               options={options}
               placeholder="Select City*"
-              name="details.city"
-              id="details.city"
               control={control}
+              error={!!errors?.details?.city}
             />
             {errors?.details?.city && (
               <Text id="details.cityError" variant="inputError">
-                {errors?.details?.city.message}
+                {errors?.details?.city?.message}
               </Text>
             )}
           </Box>
           <Box variant={CustomVariants.INPUT_WRAP}>
             <Controller
               as={Select}
-              error={!!errors?.details?.country}
-              options={options}
               id="details.country"
               name="details.country"
               placeholder="Country*"
+              options={options}
               control={control}
+              error={!!errors?.details?.country}
             />
             {errors?.details?.country && (
               <Text id="details.countryError" variant="inputError">
-                {errors?.details?.country.message}
+                {errors?.details?.country?.message}
               </Text>
             )}
           </Box>
@@ -346,7 +346,7 @@ const AddBrandForm: React.FC<PropTypes> = () => {
             <Label htmlFor="details.zipCode">Zip Code*</Label>
             {errors?.details?.zipCode && (
               <Text id="details.zipCodeError" variant="inputError">
-                {errors?.details?.zipCode.message}
+                {errors?.details?.zipCode?.message}
               </Text>
             )}
           </Box>
@@ -458,13 +458,13 @@ const AddBrandForm: React.FC<PropTypes> = () => {
         </Grid>
         <Grid gap={10} columns={3}>
           <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.fuelManagementFMC">Fuel Management</Label>
+            <Label htmlFor="serviceParameters.fuelManagement.fmc">Fuel Management</Label>
           </Box>
           <Grid gap={4} columns={2}>
             <Box variant={CustomVariants.INPUT_WRAP}>
               <Input
-                id="serviceParameters.fuelManagementFMC"
-                name="serviceParameters.fuelManagementFMC"
+                id="serviceParameters.fuelManagement.fmc"
+                name="serviceParameters.fuelManagement.fmc"
                 placeholder="Fuel Management FMC"
                 autoComplete="off"
                 ref={register}
@@ -473,225 +473,9 @@ const AddBrandForm: React.FC<PropTypes> = () => {
             </Box>
             <Box variant={CustomVariants.INPUT_WRAP}>
               <Input
-                id="serviceParameters.fuelManagementPartner"
-                name="serviceParameters.fuelManagementPartner"
+                id="serviceParameters.fuelManagement.partner"
+                name="serviceParameters.fuelManagement.partner"
                 placeholder="Fuel Management Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.insuranceFMC">Insurance</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.insuranceFMC"
-                name="serviceParameters.insuranceFMC"
-                placeholder="Insurance FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.insurancePartner"
-                name="serviceParameters.insurancePartner"
-                placeholder="Insurance Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.reMarketingFMC">Remarketing</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.reMarketingFMC"
-                name="serviceParameters.reMarketingFMC"
-                placeholder="Remarketing FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.reMarketingPartner"
-                name="serviceParameters.reMarketingPartner"
-                placeholder="Remarketing Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.onlineReportingFMC">Online Reporting</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.onlineReportingFMC"
-                name="serviceParameters.onlineReportingFMC"
-                placeholder="Online Reporting FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.onlineReportingPartner"
-                name="serviceParameters.onlineReportingPartner"
-                placeholder="Online Reporting Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.breakdownAssistFMC">Breakdown Assist.</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.breakdownAssistFMC"
-                name="serviceParameters.breakdownAssistFMC"
-                placeholder="Breakdown Assist FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.breakdownAssistPartner"
-                name="serviceParameters.breakdownAssistPartner"
-                placeholder="Breakdown Assist Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.replacementCarFMC">Replacement Car</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.replacementCarFMC"
-                name="serviceParameters.replacementCarFMC"
-                placeholder="Replacement Car FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.replacementCarPartner"
-                name="serviceParameters.replacementCarPartner"
-                placeholder="Replacement Car Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.warrantyExtFMC">Warranty Ext.</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.warrantyExtFMC"
-                name="serviceParameters.warrantyExtFMC"
-                placeholder="Warranty Ext FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.warrantyExtPartner"
-                name="serviceParameters.warrantyExtPartner"
-                placeholder="Warranty Ext Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.leasingFMC">Leasing</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.leasingFMC"
-                name="serviceParameters.leasingFMC"
-                placeholder="Leasing FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.leasingPartner"
-                name="serviceParameters.leasingPartner"
-                placeholder="Leasing Partner"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid gap={10} columns={3}>
-          <Box variant={CustomVariants.INPUT_WRAP} sx={{ alignSelf: 'center' }}>
-            <Label htmlFor="serviceParameters.smrFMC">SMR</Label>
-          </Box>
-          <Grid gap={4} columns={2}>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.smrFMC"
-                name="serviceParameters.smrFMC"
-                placeholder="SMR FMC"
-                autoComplete="off"
-                ref={register}
-                variant={EnumInputVariants.SECONDARY}
-              />
-            </Box>
-            <Box variant={CustomVariants.INPUT_WRAP}>
-              <Input
-                id="serviceParameters.smrPartner"
-                name="serviceParameters.smrPartner"
-                placeholder="SMR Partner"
                 autoComplete="off"
                 ref={register}
                 variant={EnumInputVariants.SECONDARY}

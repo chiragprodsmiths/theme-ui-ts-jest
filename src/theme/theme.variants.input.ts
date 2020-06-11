@@ -4,7 +4,7 @@ export enum EnumInputVariants {
   'SECONDARY' = 'secondary',
 }
 
-export type IInputVariants = Record<EnumInputVariants, any>;
+export type IInputVariants = Record<EnumInputVariants, object>;
 
 const InputVariants: IInputVariants = {
   input: {
