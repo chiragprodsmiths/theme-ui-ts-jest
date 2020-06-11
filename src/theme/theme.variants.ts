@@ -60,7 +60,7 @@ export const Variants: IVariants = {
   },
   inputFileWrap: {
     mt: -2,
-    mb: 12,
+    pb: 12,
     position: 'relative',
     overflow: 'hidden',
   },

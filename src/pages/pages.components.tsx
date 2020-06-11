@@ -43,6 +43,9 @@ const AllComponents: React.FC<PropTypes> = () => {
           <Label htmlFor="uploadfile">Upload File</Label>
           <Button variant="outline">Browse</Button>
         </Box>
+        <Text variant="inputError" sx={{ color: 'textLight' }}>
+          Only .jpg and .png, 2 Mb max file size
+        </Text>
       </Box>
       <Box variant="inputFileWrap">
         <Box variant="inputFileBox">
@@ -60,6 +63,7 @@ const AllComponents: React.FC<PropTypes> = () => {
             </Badge>
           </Box>
         </Box>
+        <Text variant="inputError">File cannot exceed 2 Mb</Text>
       </Box>
     </Box>
   );
