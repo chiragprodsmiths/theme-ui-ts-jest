@@ -14,6 +14,28 @@ const Styles = {
     },
     input: {
       fontFamily: 'regular',
+      '&[type="checkbox"]': {
+        '& ~ svg': {
+          background: 'none !important',
+          fill: '#CFDBE9',
+          strokeWidth: '1px',
+        },
+        '&:checked ~ svg': {
+          color: 'link',
+          fill: 'link',
+        },
+      },
+      '&[type="radio"]': {
+        '& ~ svg': {
+          fill: '#CFDBE9',
+          background: 'none !important',
+          strokeWidth: '1px',
+        },
+        '&:checked ~ svg': {
+          color: 'link',
+          fill: 'link',
+        },
+      },
     },
     textarea: {
       fontFamily: 'regular',

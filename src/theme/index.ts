@@ -5,6 +5,7 @@ import Colors from './theme.colors';
 import InputVariants from './theme.variants.input';
 import ImagesVariants from './theme.variants.images';
 import LinkVariants from './theme.variants.links';
+import RadioVariants from './theme.variants.radio';
 import Radii from './theme.radii';
 import Styles from './theme.styles';
 import Shadows from './theme.shadows';
@@ -25,6 +26,7 @@ export const theme = {
   forms: {
     ...InputVariants,
     ...TextareaVariants,
+    ...RadioVariants,
   },
   images: ImagesVariants,
   lineHeights: Typography.lineHeights,

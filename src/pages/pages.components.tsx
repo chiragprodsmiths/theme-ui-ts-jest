@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // theme ui
-import { Badge, Button, Box, Close, Input, Label, Text } from 'theme-ui';
+import { Badge, Button, Box, Checkbox, Close, Input, Label, Radio, Text } from 'theme-ui';
 
 type PropTypes = {};
 
@@ -64,6 +64,22 @@ const AllComponents: React.FC<PropTypes> = () => {
           </Box>
         </Box>
         <Text variant="inputError">File cannot exceed 2 Mb</Text>
+      </Box>
+      <Box variant="inputFileWrap">
+        <Label sx={{ lineHeight: 'normal' }}>
+          <Checkbox defaultChecked />
+          Hello
+        </Label>
+      </Box>
+      <Box variant="inputFileWrap">
+        <Label sx={{ lineHeight: 'normal' }}>
+          <Radio name="dark-mode" value="true" />
+          Dark Mode
+        </Label>
+        <Label sx={{ lineHeight: 'normal' }}>
+          <Radio name="dark-mode" value="false" />
+          Light Mode
+        </Label>
       </Box>
     </Box>
   );

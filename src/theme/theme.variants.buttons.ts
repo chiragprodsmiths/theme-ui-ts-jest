@@ -9,7 +9,6 @@ export enum EnumButtonVariants {
   'CLOSE' = 'close',
   'LINK' = 'link',
   'PAGINATION' = 'pagination',
-  'FILECLOSE' = 'fileClose',
 }
 
 export type IButtonVariants = Record<EnumButtonVariants, any>;
