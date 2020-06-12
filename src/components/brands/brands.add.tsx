@@ -350,7 +350,7 @@ const AddBrandForm: React.FC<PropTypes> = () => {
               id="city"
               name="city"
               options={options}
-              placeholder="Select City*"
+              placeholder="City*"
               control={control}
               error={!!errors?.city}
               aria-invalid={errors?.city ? 'true' : 'false'}
