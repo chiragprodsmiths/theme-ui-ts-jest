@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { CSSProperties } from 'react';
 import Select, { components, CommonProps } from 'react-select';
@@ -20,13 +18,13 @@ const ValueContainer: React.FC<CommonProps<any>> = (props) => {
 };
 
 // Select Custom Styles
-const CustomStyles = (error: boolean) => {
+const CustomStyles = (error: boolean): object => {
   return {
-    container: (base: CSSProperties) => ({
+    container: (base: CSSProperties): object => ({
       ...base,
       width: '100%',
     }),
-    control: (base: CSSProperties, state: any) => {
+    control: (base: CSSProperties, state: any): object => {
       const defaultBorder = state.menuIsOpen || state.hasValue ? Colors.link : Colors.border;
       return {
         ...base,
@@ -41,7 +39,7 @@ const CustomStyles = (error: boolean) => {
         },
       };
     },
-    dropdownIndicator: (base: CSSProperties, state: { selectProps: { menuIsOpen: any } }) => ({
+    dropdownIndicator: (base: CSSProperties, state: { selectProps: { menuIsOpen: any } }): object => ({
       ...base,
       padding: '7px 8px',
       ...(state.selectProps.menuIsOpen
@@ -51,8 +49,8 @@ const CustomStyles = (error: boolean) => {
           }
         : {}),
     }),
-    indicatorSeparator: () => ({}),
-    menu: (base: CSSProperties) => ({
+    indicatorSeparator: (): object => ({}),
+    menu: (base: CSSProperties): object => ({
       ...base,
       margin: 0,
       backgroundColor: Colors.white,
@@ -60,15 +58,14 @@ const CustomStyles = (error: boolean) => {
       width: '100%',
       right: 0,
     }),
-    // singleValue: (base: any, state: { selectProps: { menuIsOpen: any } }) => ({
-    singleValue: (base: CSSProperties) => ({
+    singleValue: (base: CSSProperties): object => ({
       ...base,
       overflow: 'initial',
       color: Colors.text,
       lineHeight: 1.4,
       fontSize: 16,
     }),
-    option: (base: CSSProperties, state: { isSelected: any; isFocused: any }) => {
+    option: (base: CSSProperties, state: { isSelected: any; isFocused: any }): object => {
       const defaultBg = state.isFocused ? Colors.primary : Colors.white;
       const defaultColor = state.isFocused ? Colors.white : Colors.text;
       return {
@@ -79,12 +76,12 @@ const CustomStyles = (error: boolean) => {
         color: state.isSelected ? Colors.primary : defaultColor,
       };
     },
-    valueContainer: (base: CSSProperties) => ({
+    valueContainer: (base: CSSProperties): object => ({
       ...base,
       padding: '12px',
       overflow: 'initial',
     }),
-    placeholder: (base: CSSProperties, state: any) => ({
+    placeholder: (base: CSSProperties, state: any): object => ({
       ...base,
       color: state.hasValue ? Colors.link : Colors.textLight,
       transform: state.hasValue ? 'translate(0, -31px)' : 'translate(0, -11px)',
@@ -93,15 +90,19 @@ const CustomStyles = (error: boolean) => {
       paddingLeft: 2,
       paddingRight: 2,
     }),
-    // input: (base) => ({ ...base }),
   };
+};
+
+type OptionType = {
+  label: string;
+  value: string;
 };
 
 type PropTypes = {
   error: boolean;
   placeholder?: string;
   id: string;
-  options: any[];
+  options: OptionType[];
 };
 
 const SelectDropdown: React.FC<PropTypes> = (props: PropTypes) => {
@@ -115,6 +116,7 @@ const SelectDropdown: React.FC<PropTypes> = (props: PropTypes) => {
     />
   );
 };
+/* eslint-enable react/jsx-props-no-spreading */
 
 SelectDropdown.defaultProps = {
   error: false,

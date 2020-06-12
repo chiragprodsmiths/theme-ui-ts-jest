@@ -20,7 +20,7 @@ export enum CustomVariants {
   'SELECTED_FILE_WRAP' = 'selectedFileWrap',
 }
 
-export type IVariants = Record<CustomVariants, any>;
+export type IVariants = Record<CustomVariants, object>;
 
 export const Variants: IVariants = {
   footer: {

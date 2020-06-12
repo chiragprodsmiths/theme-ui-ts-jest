@@ -21,12 +21,12 @@ const BrandBreadCrumb: React.FC<PropTypes> = () => {
         }
       />
       <Route
-        path="add"
+        path="add-brand"
         element={
           <BreadCrumb
             fragments={[
               { path: '/brands', name: 'Brands' },
-              { path: '/brands/add', name: 'Add New Brand' },
+              { path: '/brands/add-brand', name: 'Add Brand' },
             ]}
           />
         }

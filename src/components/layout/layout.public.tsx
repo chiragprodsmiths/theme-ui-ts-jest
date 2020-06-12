@@ -1,15 +1,18 @@
 import * as React from 'react';
+import { Outlet } from 'react-router-dom';
 
-type PropTypes = {
-  children: React.ReactElement;
-};
+type PropTypes = {};
 
 /**
  * Public layout
  * used for public pages
  */
-const PublicLayout: React.FC<PropTypes> = (props: PropTypes) => {
-  return <main>{props.children}</main>;
+const PublicLayout: React.FC<PropTypes> = () => {
+  return (
+    <main>
+      <Outlet />
+    </main>
+  );
 };
 
 PublicLayout.defaultProps = {};

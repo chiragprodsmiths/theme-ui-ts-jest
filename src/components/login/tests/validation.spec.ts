@@ -1,4 +1,4 @@
-import { validationSchema } from '../validation';
+import { validationSchema } from '../login.validation';
 
 describe('Login Schema Validation', () => {
   test('invalid schema ', async () => {

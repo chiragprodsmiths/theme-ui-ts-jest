@@ -1,6 +1,6 @@
-export const addBrandMutation = `
+export const createBrandMutation = `
   mutation($name: String!, $description: String!) {
-    addBrand(brandObj: { name: $name, description: $description }) {
+    createBrand(brandObj: { name: $name, description: $description }) {
       id
     }
   }

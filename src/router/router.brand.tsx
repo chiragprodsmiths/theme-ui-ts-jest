@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import BrandPages from 'pages/brands';
-import BrandsLayout from 'components/layout/layout.brand.';
+import NotFound from 'pages/pages.404';
+import AddBrand from 'pages/brands/pages.brands.add';
+import Brands from 'pages/brands/pages.brands';
+import EditBrand from 'pages/brands/pages.brands.edit';
+import ProtectedRoute from './router.protected';
 
 type PropTypes = {};
 
@@ -12,13 +15,12 @@ type PropTypes = {};
 
 const BrandRouter: React.FC<PropTypes> = () => {
   return (
-    <BrandsLayout>
-      <Routes>
-        <Route path="/" element={<BrandPages.Brands />} />
-        <Route path="add" element={<BrandPages.AddBrand />} />
-        <Route path=":slug" element={<BrandPages.EditBrand />} />
-      </Routes>
-    </BrandsLayout>
+    <Routes>
+      <Route path="/" element={<ProtectedRoute element={<Brands />} />} />
+      <Route path="add-brand" element={<ProtectedRoute element={<AddBrand />} />} />
+      <Route path="edit-brand/:slug" element={<ProtectedRoute element={<EditBrand />} />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

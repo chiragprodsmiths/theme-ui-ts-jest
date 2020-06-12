@@ -1,12 +1,6 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from 'components/auth/auth.provider';
-import AppLayout from 'components/layout/layout.app';
-import Home from 'pages/pages.home';
-import AllComponents from 'pages/pages.components';
-import BrandRouter from './router.brand';
-
-type PropTypes = {};
 
 /**
  * Router
@@ -15,27 +9,19 @@ type PropTypes = {};
  * https://reacttraining.com/blog/react-router-v6-pre/
  */
 
-type ProtectedRouteProps = {
+type PropTypes = {
   element: React.ReactElement;
 };
 
-const PublicRoute: React.FC<ProtectedRouteProps> = (props: ProtectedRouteProps) => {
+const ProtectedRoute: React.FC<PropTypes> = (props: PropTypes) => {
   const { authenticated } = useContext(AuthContext);
   const { pathname, search } = useLocation();
 
+  // if not authenticated redirect to login
   if (!authenticated) return <Navigate to="/login" replace state={{ redirect: `${pathname}${search}` }} />;
 
-  return <AppLayout>{props.element}</AppLayout>;
+  // else render route
+  return <>{props.element}</>;
 };
 
-const ProtectedRouter: React.FC<PropTypes> = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<PublicRoute element={<Home />} />} />
-      <Route path="brands/*" element={<PublicRoute element={<BrandRouter />} />} />
-      <Route path="components" element={<AllComponents />} />
-    </Routes>
-  );
-};
-
-export default ProtectedRouter;
+export default ProtectedRoute;

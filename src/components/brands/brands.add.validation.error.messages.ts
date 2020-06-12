@@ -34,6 +34,12 @@ export enum UnitsErrorMessages {
   REQUIRED = 'Please Select units',
 }
 
-export enum FleetManagementFMCErrorMessages {
-  NUMBER = 'Please enter numbers only',
+export enum ServiceParametersMessage {
+  DECIMAL = 'Please enter numeric value and not more than 2 decimal',
+  IS_NOT_NUMBER = 'Should be number.',
+}
+
+export enum MarginsAndDiscountsParametersMessage {
+  NUMBERS = 'Please enter numeric value not more than 2 decimal',
+  PERCENTAGE = 'Percentage should be 0 - 100',
 }

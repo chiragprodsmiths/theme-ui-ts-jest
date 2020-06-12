@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router';
 /**
  * Theme UI Components
  */
@@ -11,22 +12,20 @@ import ChevronDown from 'components/icons/icon.chevronDown';
 import DocumentIcon from 'components/icons/icon.document';
 import ReportIcon from 'components/icons/icon.report';
 import UserIcon from 'components/icons/icon.user';
-// import BreadCrumbs from 'components/breadcrumbs/breadcrumbs';
+import BreadCrumbs from 'components/breadcrumbs/breadcrumbs';
 
 /**
  * Images
  */
 import logo from 'images/logo.png';
 
-type PropTypes = {
-  children: React.ReactElement;
-};
+type PropTypes = {};
 
 /**
  * App Layout
  * used for protected app pages
  */
-const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
+const AppLayout: React.FC<PropTypes> = () => {
   const [openBrandList, toggleBrandList] = useState<boolean>(false);
 
   const onClickBrand = (): void => {
@@ -70,9 +69,11 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
               <Heading as="h4" sx={{ color: 'textLight' }}>
                 Dashboards
               </Heading>
+              <BreadCrumbs />
             </Box>
             <Box sx={{ width: '30%', textAlign: 'right' }}>
               <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                {/* TODO: @chirag separate out the component into brands/brands-select */}
                 <Box sx={{ position: 'relative' }}>
                   <IconButton onClick={onClickBrand}>
                     <BrandIcon sx={{ mr: 2 }} />
@@ -113,14 +114,13 @@ const AppLayout: React.FC<PropTypes> = (props: PropTypes) => {
           </Flex>
         </Container>
       </header>
-      {/* <BreadCrumbs /> */}
       <Box
         as="main"
         sx={{
           flex: '1 1 auto',
         }}>
         <Container px={8} py={8}>
-          {props.children}
+          <Outlet />
         </Container>
       </Box>
       <footer>

@@ -1,11 +1,11 @@
 export enum EnumCardsVariants {
-  'DASHBOARD_TAB' = 'dashboardTab',
-  'DASHBOARD_TAB_ACTIVE' = 'dashboardTabActive',
+  'DASHBOARD' = 'dashboard',
+  'DASHBOARD_DISABLED' = 'dashboardDisabled',
   'POPOVER' = 'popover',
   'COLLAPSE' = 'collapse',
 }
 
-const dashboardTabBase = {
+const dashboardCommon = {
   borderRadius: 'default',
   boxShadow: 'card',
   bg: 'white',
@@ -13,18 +13,18 @@ const dashboardTabBase = {
   position: 'relative',
 };
 
-export type ICardsVariants = Record<EnumCardsVariants, any>;
+export type ICardsVariants = Record<EnumCardsVariants, object>;
 
 const CardsVariants: ICardsVariants = {
-  dashboardTab: {
-    ...dashboardTabBase,
+  dashboard: {
+    ...dashboardCommon,
     cursor: 'pointer',
     '&:hover': {
       boxShadow: 'cardHover',
     },
   },
-  dashboardTabActive: {
-    ...dashboardTabBase,
+  dashboardDisabled: {
+    ...dashboardCommon,
     cursor: 'no-drop',
     opacity: 0.5,
   },

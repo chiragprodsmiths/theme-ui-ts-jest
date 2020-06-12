@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Flex, Box, Grid, Link, Divider, Button } from 'theme-ui';
-import DashboardCard from 'components/dashboard/dashboard.cad';
+import DashboardCard from 'components/dashboard/dashboard.card';
 import DashboardListItem from 'components/dashboard/dashboard.listItem';
 import ChevronRight from 'components/icons/icon.chevronRight';
 
@@ -14,8 +14,8 @@ const Home: React.FC<PropTypes> = () => {
     <Grid gap={3} columns={[2, '7fr 3fr']}>
       <Box sx={{ textAlign: 'center' }}>
         <Grid gap={3} columns={[2, null, 3]}>
-          <DashboardCard title="Customers" value={120} status="Active" badgeValue={4} to="/routeName" active />
-          <DashboardCard title="Offers" value={100} status="Pipline" badgeValue={5} to="/routeName" active />
+          <DashboardCard title="Brands" value={120} status="Active" to="/brands" active />
+          <DashboardCard title="Users" value={100} status="Active" badgeValue={5} to="/users" active />
           <DashboardCard title="Deliveries" value={34} status="Cars on Order" badgeValue={4} to="/routeName" />
           <DashboardCard title="Activations" value={3} status="InProgress" badgeValue={10} to="/routeName" />
           <DashboardCard title="Active Contracts" value={56} status="Running" badgeValue={4} to="/routeName" />

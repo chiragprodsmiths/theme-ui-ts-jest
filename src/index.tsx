@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'urql';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from 'components/app/app';
+import { AuthProvider } from 'components/auth/auth.provider';
 import { apiClient } from './api/apiClient';
 
 /**
@@ -12,7 +13,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider value={apiClient}>
       <Router>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </Router>
     </Provider>
   </React.StrictMode>,
