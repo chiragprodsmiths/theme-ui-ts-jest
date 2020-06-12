@@ -43,3 +43,7 @@ export enum MarginsAndDiscountsParametersMessage {
   NUMBERS = 'Please enter numeric value not more than 2 decimal',
   PERCENTAGE = 'Percentage should be 0 - 100',
 }
+
+export enum FmcID {
+  REQUIRED = 'Please enter FMC Id',
+}

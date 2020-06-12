@@ -2,6 +2,10 @@ import * as yup from 'yup';
 import { ServiceParametersParams, MarginAndDiscountsParams } from './brands.add.types';
 import * as ErrorMessages from './brands.add.validation.error.messages';
 
+export const required = (message: string): yup.StringSchema<string> => yup.string().required(message);
+
+export const optional: yup.StringSchema<string | null> = yup.string().nullable().defined();
+
 const allowNull: yup.NumberSchema<number | null> = yup
   .number()
   .transform((value) => (Number.isNaN(value) ? null : value))
@@ -26,7 +30,7 @@ const onlyDecimalAllowed: yup.MixedSchema<{} | null> = yup
   .nullable()
   .defined();
 
-export const OptionalTwoDecimalNumbers: yup.Lazy = yup.lazy((originalValue) => {
+export const optionalTwoDecimalNumbers: yup.Lazy = yup.lazy((originalValue) => {
   if (typeof originalValue === 'string' && originalValue === '') {
     return allowNull;
   }
@@ -59,7 +63,7 @@ export const OptionalPercentage: yup.Lazy = yup.lazy((originalValue) => {
   return onlyDecimalAllowed;
 });
 
-export const serviceParameterValidation = OptionalTwoDecimalNumbers;
+export const serviceParameterValidation = optionalTwoDecimalNumbers;
 
 export const serviceParemetersValidation: yup.ObjectSchema<ServiceParametersParams> = yup
   .object<ServiceParametersParams>({
@@ -79,15 +83,16 @@ export const serviceParemetersValidation: yup.ObjectSchema<ServiceParametersPara
   })
   .defined();
 
+// TODO: @ankit validation assignment pending for below all field
 export const marginsAndDiscountParametersValidation: yup.ObjectSchema<MarginAndDiscountsParams> = yup
   .object<MarginAndDiscountsParams>({
     smr: OptionalPercentage,
-    smrDiscount: yup.number().nullable().defined(),
-    insurance: OptionalTwoDecimalNumbers,
-    leasing: yup.number().nullable().defined(),
-    tire: yup.number().nullable().defined(),
-    tireDiscount: yup.number().nullable().defined(),
-    fuel: OptionalTwoDecimalNumbers,
-    km: OptionalTwoDecimalNumbers,
+    smrDiscount: OptionalPercentage,
+    insurance: optionalTwoDecimalNumbers,
+    leasing: OptionalPercentage,
+    tire: OptionalPercentage,
+    tireDiscount: OptionalPercentage,
+    fuel: optionalTwoDecimalNumbers,
+    km: optionalTwoDecimalNumbers,
   })
   .defined();
