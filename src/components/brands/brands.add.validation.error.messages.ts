@@ -35,7 +35,8 @@ export enum UnitsErrorMessages {
 }
 
 export enum ServiceParametersMessage {
-  DECIMAL = 'Please enter numeric value not more than 2 decimal',
+  DECIMAL = 'Please enter numeric value and not more than 2 decimal',
+  IS_NOT_NUMBER = 'Should be number.',
 }
 
 export enum MarginsAndDiscountsParametersMessage {
