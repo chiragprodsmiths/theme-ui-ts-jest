@@ -55,11 +55,11 @@ const AllComponents: React.FC<PropTypes> = () => {
           <Box variant="selectedFileWrap">
             <Badge variant="selectedFile">
               <Text variant="selectedFileText">Filename.png</Text>
-              <Close sx={{ width: 20, height: 20, ml: 2 }} />
+              <Close variant="closeSmall" />
             </Badge>
             <Badge variant="selectedFile">
               <Text variant="selectedFileText">test.jpg</Text>
-              <Close sx={{ width: 20, height: 20, ml: 2 }} />
+              <Close variant="closeSmall" />
             </Badge>
           </Box>
         </Box>

@@ -7,6 +7,7 @@ export enum EnumButtonVariants {
   'TAB' = 'tab',
   'TAB_ACTIVE' = 'tabActive',
   'CLOSE' = 'close',
+  'CLOSE_SMALL' = 'closeSmall',
   'LINK' = 'link',
   'PAGINATION' = 'pagination',
 }
@@ -73,6 +74,14 @@ export const ButtonVariants: IButtonVariants = {
     py: 0,
     width: 28,
     height: 28,
+  },
+  closeSmall: {
+    color: 'textLight',
+    px: 0,
+    py: 0,
+    width: 20,
+    height: 20,
+    ml: 2,
   },
   transparent: {
     bg: 'transparent',
