@@ -2,6 +2,7 @@ export enum EnumCardsVariants {
   'DASHBOARD' = 'dashboard',
   'DASHBOARD_DISABLED' = 'dashboardDisabled',
   'POPOVER' = 'popover',
+  'COLLAPSE' = 'collapse',
 }
 
 const dashboardCommon = {
@@ -37,6 +38,13 @@ const CardsVariants: ICardsVariants = {
     boxShadow: 'buttonOutlineShadow',
     padding: 0,
     zIndex: 1,
+  },
+  collapse: {
+    borderRadius: 'default',
+    border: '1px solid',
+    borderColor: 'border',
+    mb: 8,
+    bg: 'white',
   },
 };
 

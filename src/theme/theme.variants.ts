@@ -12,9 +12,12 @@ export enum CustomVariants {
   'PAGINATION_WRAP' = 'paginationWrap',
   'PAGINATION_PREV' = 'paginationPrev',
   'PAGINATION_Next' = 'paginationNext',
+  'COLLAPSE_HEADER' = 'collapseHeader',
+  'COLLAPSE_SECTION' = 'collapseSection',
+  'COLLAPSE_FOOTER' = 'collapseFooter',
 }
 
-export type IVariants = Record<CustomVariants, any>;
+export type IVariants = Record<CustomVariants, object>;
 
 export const Variants: IVariants = {
   footer: {
@@ -126,5 +129,24 @@ export const Variants: IVariants = {
     borderLeftColor: 'border',
     borderRight: 'none',
     overflow: 'hidden',
+  },
+  collapseHeader: {
+    justifyContent: 'space-between',
+    borderBottom: '1px solid',
+    borderColor: 'border',
+    px: 6,
+    py: 4,
+    alignItems: 'center',
+  },
+  collapseSection: {
+    borderBottom: '1px solid',
+    borderColor: 'border',
+    px: 12,
+    pt: 10,
+  },
+  collapseFooter: {
+    px: 12,
+    pb: 10,
+    pt: 8,
   },
 };

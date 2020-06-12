@@ -1,14 +1,10 @@
 import * as React from 'react';
 
 // theme ui
-import { Box, Input, Label, Text } from 'theme-ui';
-import Select from 'components/select';
-
-// const options = [
-//   { value: 'chocolate', label: 'Chocolate' },
-//   { value: 'strawberry', label: 'Strawberry' },
-//   { value: 'vanilla', label: 'Vanilla' },
-// ];
+import { IconButton, Box, Input, Label, Text } from 'theme-ui';
+import AddIcon from 'components/icons/icon.add';
+import SubtractIcon from 'components/icons/icon.subtract';
+import { CustomVariants } from 'theme/theme.variants';
 
 type PropTypes = {};
 
@@ -44,17 +40,23 @@ const AllComponents: React.FC<PropTypes> = () => {
           Error Message
         </Text>
       </Box>
-      <Box variant="inputWrap">
-        {/* <Select options={options} placeholder="Select option" /> */}
-        <Select />
+      <Box variant={CustomVariants.INPUT_WRAP}>
+        <IconButton>
+          <AddIcon sx={{ mr: 2 }} />{' '}
+          <Text as="span" color="link" sx={{ fontFamily: 'IBMPlexSansMedium' }}>
+            Add another Address
+          </Text>
+        </IconButton>
+        <IconButton ml="8">
+          <SubtractIcon sx={{ mr: 2 }} />
+          <Text as="span" color="link" sx={{ fontFamily: 'IBMPlexSansMedium' }}>
+            Remove
+          </Text>
+        </IconButton>
       </Box>
-      <Box variant="inputWrap">
-        {/* <Select options={options} placeholder="Select with error" error /> */}
-        <Select />
-        <Text id="inputErrorError" variant="inputError">
-          Error Message
-        </Text>
-      </Box>
+      <Text id="inputErrorError" variant="inputError">
+        Error Message
+      </Text>
     </Box>
   );
 };

@@ -24,12 +24,18 @@ const LinkVariants: ILinkVariants = {
   },
   sidebarActive: {
     lineHeight: '40px',
-    px: 3,
-    py: 2,
+    px: 4,
+    py: '6px',
     bg: 'primary',
     color: 'white',
     boxShadow: 'buttonShadow',
     borderRadius: 'sm',
+    '& + button': {
+      position: 'absolute',
+      right: 7,
+      top: 0,
+      bottom: 0,
+    },
   },
   iconLink: {
     display: 'flex',

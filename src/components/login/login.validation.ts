@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { FormData, UserNameErrorMessages, PasswordErrorMessages } from './types';
+import { FormData, UserNameErrorMessages, PasswordErrorMessages } from './login.types';
 
 export const validationSchema = yup
   .object<FormData>({
