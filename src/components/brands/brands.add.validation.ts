@@ -1,6 +1,7 @@
 import * as yup from 'yup';
-import { CreateBrandParams, ServiceParametersParams, MarginAndDiscountsParams } from './brands.add.types';
+import { CreateBrandParams } from './brands.add.types';
 import * as ErrorMessages from './brands.add.validation.error.messages';
+import { serviceParemetersValidation, marginsAndDiscountParametersValidation } from './brands.add.validation.common';
 
 export const validationSchema = yup
   .object<CreateBrandParams>({
@@ -19,72 +20,9 @@ export const validationSchema = yup
     reportsFooter: yup.string().nullable().defined(),
     logo: yup.string().nullable().defined(),
     brandPrimaryColor: yup.string().nullable().defined(),
-    fmcServiceParameters: yup
-      .object<ServiceParametersParams>({
-        fleetManagement: yup
-          .number()
-          .transform((value) => (Number.isNaN(value) ? null : value))
-          .test('isDecimal', ErrorMessages.ServiceParametersMessage.DECIMAL, (value) => {
-            if (value && value !== null) {
-              return new RegExp(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/).test(value);
-            }
-            return true;
-          })
-          .nullable()
-          .defined(),
-        maintenanceRepairs: yup.number().nullable().defined(),
-        tireManagement: yup.number().nullable().defined(),
-        fuelManagement: yup.number().nullable().defined(),
-        insurance: yup.number().nullable().defined(),
-        damageManagement: yup.number().nullable().defined(),
-        remarketing: yup.number().nullable().defined(),
-        onlineReporting: yup.number().nullable().defined(),
-        breakdownAssistance: yup.number().nullable().defined(),
-        carReplacement: yup.number().nullable().defined(),
-        warrantyExtension: yup.number().nullable().defined(),
-        leasing: yup.number().nullable().defined(),
-        smr: yup.number().nullable().defined(),
-      })
-      .defined(),
-    partnerServiceParameters: yup
-      .object<ServiceParametersParams>({
-        fleetManagement: yup
-          .number()
-          .transform((value) => (Number.isNaN(value) ? null : value))
-          .test('isDecimal', ErrorMessages.ServiceParametersMessage.DECIMAL, (value) => {
-            if (value && value !== null) {
-              return new RegExp(/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/).test(value);
-            }
-            return true;
-          })
-          .nullable()
-          .defined(),
-        maintenanceRepairs: yup.number().nullable().defined(),
-        tireManagement: yup.number().nullable().defined(),
-        fuelManagement: yup.number().nullable().defined(),
-        insurance: yup.number().nullable().defined(),
-        damageManagement: yup.number().nullable().defined(),
-        remarketing: yup.number().nullable().defined(),
-        onlineReporting: yup.number().nullable().defined(),
-        breakdownAssistance: yup.number().nullable().defined(),
-        carReplacement: yup.number().nullable().defined(),
-        warrantyExtension: yup.number().nullable().defined(),
-        leasing: yup.number().nullable().defined(),
-        smr: yup.number().nullable().defined(),
-      })
-      .defined(),
-    marginAndDiscountsParams: yup
-      .object<MarginAndDiscountsParams>({
-        smr: yup.number().nullable().defined(),
-        smrDiscount: yup.number().nullable().defined(),
-        insurance: yup.number().nullable().defined(),
-        leasing: yup.number().nullable().defined(),
-        tire: yup.number().nullable().defined(),
-        tireDiscount: yup.number().nullable().defined(),
-        fuel: yup.number().nullable().defined(),
-        km: yup.number().nullable().defined(),
-      })
-      .defined(),
+    fmcServiceParameters: serviceParemetersValidation,
+    partnerServiceParameters: serviceParemetersValidation,
+    marginAndDiscountsParams: marginsAndDiscountParametersValidation,
     fmcId: yup.string().required(),
   })
   .defined();

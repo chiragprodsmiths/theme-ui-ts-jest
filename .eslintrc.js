@@ -48,5 +48,6 @@ module.exports = {
     'no-console': 'off',
     'react/no-unescaped-entities': 'off',
     'react/jsx-closing-bracket-location': 'off',
+    'max-classes-per-file': 'off',
   },
 };
