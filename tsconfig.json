@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
+    "target": "esnext",
     "module": "commonjs",
-    "lib": ["dom", "dom.iterable", "ES2018"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "rootDir": "src",
     "baseUrl": "./",
     "paths": {

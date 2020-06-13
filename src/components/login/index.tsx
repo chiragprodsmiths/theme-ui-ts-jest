@@ -21,9 +21,9 @@ import { validationSchema } from './login.validation';
 /**
  * prop types
  */
-export type PropTypes = {};
+type PropTypes = {};
 
-export const Login: React.FC<PropTypes> = () => {
+const Login: React.FC<PropTypes> = () => {
   const { setAuthenticated, setToken } = useContext(AuthContext);
   const [loginResult, setLoginResult] = useState<LoginResponse>({ login: { token: '' } });
   const [loginErrors, setLoginErrors] = useState<boolean>(false);

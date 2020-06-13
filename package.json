@@ -87,7 +87,7 @@
     "ts-jest": "^25.5.1",
     "ts-loader": "^7.0.4",
     "ts-node": "^8.10.1",
-    "tslib": "^1.12.0",
+    "tslib": "^2.0.0",
     "typescript": "^3.9.2",
     "urql-devtools": "^2.1.0",
     "webpack": "^4.43.0",
