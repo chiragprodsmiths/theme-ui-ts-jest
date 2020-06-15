@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
-import { Alerts } from '../index';
+import Alerts from '../index';
 import alerts from '../alerts.json';
 
 it('renders', () => {

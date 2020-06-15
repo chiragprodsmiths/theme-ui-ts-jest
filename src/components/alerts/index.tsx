@@ -1,9 +1,9 @@
 import * as React from 'react';
 import alerts from './alerts.json';
 
-export type AlertsProps = {};
+type AlertsProps = {};
 
-export const Alerts: React.FC<AlertsProps> = () => {
+const Alerts: React.FC<AlertsProps> = () => {
   return (
     <ul>
       {alerts.data.map((alert) => (

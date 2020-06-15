@@ -1,22 +1,36 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
-import { ThemeProvider } from 'theme-ui';
-import Login from '../index';
+import * as ThemeUI from 'theme-ui';
+// import Login from '../index';
 import { theme } from '../../../theme/index';
+import Alerts from '../../alerts';
 
 afterEach(cleanup);
 
+const Div: React.FC = (props) => <div {...props} />;
+
 describe('login form submit', () => {
-  it('should submit when data filled', async () => {
+  it('renders', async () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Alerts />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
+  it('renders correctly without theme ui', async () => {
+    const { container } = render(<Alerts />);
+    expect(container).toBeDefined();
+  });
+
+  it('renders throws default context error when used with theme ui', async () => {
     const { container } = render(
-      <ThemeProvider theme={theme}>
-        <Login />
-      </ThemeProvider>,
+      <Div>
+        <ThemeUI.ThemeProvider theme={theme}>
+          <Alerts />
+        </ThemeUI.ThemeProvider>
+      </Div>,
     );
-    console.log(container);
-    const submit = container.querySelector('button[(type = "submit")]');
-    console.log(submit, container);
-    expect(submit).toBeDefined();
-    // await fireEvent.click(submit);
+    expect(container).toBeDefined();
   });
 });
